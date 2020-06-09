@@ -1,0 +1,18 @@
+$black: #000000;
+$blue: #2B3E80;
+$yellow: #FFA724;
+$grey: #ECECEC;
+$white: #FFFFFF;
+
+
+* {
+    margin: 0;
+    outline-style: none;
+    user-select: none;
+    box-sizing: border-box;
+}
+
+::selection {
+    // color: $white;
+    // background-color: $black;
+}

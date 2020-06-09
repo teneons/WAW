@@ -4,6 +4,7 @@ $yellow: #FFA724;
 $grey: #ECECEC;
 $white: #FFFFFF;
 
+$testColor: red;
 
 * {
     margin: 0;
@@ -15,4 +16,30 @@ $white: #FFFFFF;
 ::selection {
     // color: $white;
     // background-color: $black;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+//WEATHER BLOCK
+.WeatherMainBlock {
+    width: 50%;
+    height: 100vh;
+
+    background-color: $white;
+}
+
+
+
+
+//MAP BLOCK
+.MapMainBlock {
+    width: 50%;
+    height: 100vh;
+    
+    background-color: $grey;
 }

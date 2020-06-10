@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
 * {
   margin: 0;
   outline-style: none;
@@ -22,13 +23,124 @@ body {
 }
 
 .WeatherMainBlock {
-  width: 50%;
+  width: 55%;
   height: 100vh;
   background-color: #FFFFFF;
+  border-right: 3px solid #000000;
+}
+
+.TaglineTextBlock {
+  width: 100%;
+  height: 12vh;
+  border-bottom: 3px solid #000000;
+}
+
+.TaglineText {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 900;
+  font-size: 64px;
+  text-align: left;
+}
+
+.WeatherContentBlock {
+  width: 100%;
+  height: 70vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.InputSearchBlock {
+  width: 100%;
+  height: 15vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 10%;
+}
+
+.FormSearchBlock {
+  width: 470px;
+  height: 75px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: relative;
+}
+
+.InputCity {
+  width: 360px;
+  height: 50px;
+  background-color: #FFFFFF;
+  border: none;
+  border-bottom: 3px solid #000000;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+}
+
+.InputCity::-webkit-input-placeholder {
+  font-size: 15px;
+  color: #E0E0E0;
+}
+
+.InputCity:-ms-input-placeholder {
+  font-size: 15px;
+  color: #E0E0E0;
+}
+
+.InputCity::-ms-input-placeholder {
+  font-size: 15px;
+  color: #E0E0E0;
+}
+
+.InputCity::placeholder {
+  font-size: 15px;
+  color: #E0E0E0;
+}
+
+.InputCity:focus::-webkit-input-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
+.InputMessageBox {
+  width: 100%;
+  height: 20px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 12px;
+}
+
+.SearchBtn {
+  width: 100px;
+  height: 50px;
+  color: #FFFFFF;
+  background-color: #FFA724;
+  border: 5px solid #FFA724;
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-transform: uppercase;
+}
+
+.SearchBtn:active {
+  border: 1px solid #FFFFFF;
 }
 
 .MapMainBlock {
-  width: 50%;
+  width: 45%;
   height: 100vh;
   background-color: #ECECEC;
 }

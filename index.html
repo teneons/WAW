@@ -5,28 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="style/icon.png" rel="shortcut icon" type="image/x-icon">
     <link rel="stylesheet" type="text/css" media="screen" href="style/style.css">
-    <title>What About the Weather??</title>
+    <title>What About the Weather?</title>
 </head>
 <body>
     <div class="WeatherMainBlock">
         <div class="TaglineTextBlock">
-            <p class="TaglineText">What About the Weather??</p>
+            <p class="TaglineText">What About the Weather?</p>
         </div>
         <div class="WeatherContentBlock">
             <div class="InputSearchBlock">
-                <div class="InputCity">
-                    <input type="text" placeholder="Input city..">
-                    <span class="mdl-textfield__error">Input is not a number!</span>
-                </div>
-                <button type="button">Search</button>
+                <form class="FormSearchBlock">
+                    <input type="text" placeholder="Input city.." class="InputCity">
+
+                    <button type="button" class="SearchBtn">Search</button>
+                    <span class="InputMessageBox">Input is not a number!</span>
+                </form>
             </div>
-        </div>
-        <div class="CardWithWetaher">
-            42
+            <div class="CardWithWetaher">
+                42
+            </div>
         </div>
     </div>
     <div class="MapMainBlock">
-
+        MAP
     </div>
 </body>
 <script src="script.js"></script>

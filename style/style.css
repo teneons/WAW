@@ -23,14 +23,15 @@ body {
 }
 
 .WeatherMainBlock {
-  width: 55%;
+  width: 55vw;
   height: 100vh;
   background-color: #FFFFFF;
   border-right: 3px solid #000000;
+  position: relative;
 }
 
 .TaglineTextBlock {
-  width: 100%;
+  width: 55vw;
   height: 12vh;
   border-bottom: 3px solid #000000;
 }
@@ -43,7 +44,7 @@ body {
 }
 
 .WeatherContentBlock {
-  width: 100%;
+  width: 55vw;
   height: 70vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -55,7 +56,7 @@ body {
 }
 
 .InputSearchBlock {
-  width: 100%;
+  width: 55vw;
   height: 15vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -70,7 +71,7 @@ body {
 }
 
 .FormSearchBlock {
-  width: 470px;
+  width: 34vw;
   height: 75px;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -79,8 +80,8 @@ body {
 }
 
 .InputCity {
-  width: 360px;
-  height: 50px;
+  width: 26vw;
+  height: 7vh;
   background-color: #FFFFFF;
   border: none;
   border-bottom: 3px solid #000000;
@@ -115,18 +116,18 @@ body {
 }
 
 .InputMessageBox {
-  width: 100%;
-  height: 20px;
+  width: 25vw;
+  height: 2.5vh;
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: 1.5vh;
   font-family: 'Roboto', sans-serif;
   font-size: 12px;
 }
 
 .SearchBtn {
-  width: 100px;
-  height: 50px;
+  width: 8vw;
+  height: 7vh;
   color: #FFFFFF;
   background-color: #FFA724;
   border: 5px solid #FFA724;
@@ -139,8 +140,20 @@ body {
   border: 1px solid #FFFFFF;
 }
 
+.WeatherCard {
+  width: 40vw;
+  height: 35vh;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 20vh;
+  bottom: 0;
+  margin: auto;
+  background-color: #ECECEC;
+}
+
 .MapMainBlock {
-  width: 45%;
+  width: 45vw;
   height: 100vh;
   background-color: #ECECEC;
 }

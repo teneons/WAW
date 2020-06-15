@@ -16,8 +16,8 @@ $testColor: red;
 }
 
 body {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 10vh;
     display: flex;
     flex-direction: row;
 }
@@ -41,7 +41,7 @@ body {
 .TaglineText {
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
-    font-size: 64px;
+    font-size: 9.8vh;
     text-align: center;
 }
 
@@ -76,7 +76,7 @@ body {
     border: none;
     border-bottom: 3px solid $black;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 3vh;
 
     &::placeholder {
         font-size: 15px;
@@ -96,7 +96,7 @@ body {
     left: 0;
     bottom: 1.5vh;
     font-family: 'Roboto', sans-serif;
-    font-size: 12px;
+    font-size: 2vh;
 }
 
 .SearchBtn {
@@ -106,7 +106,7 @@ body {
     background-color: $yellow;
     border: 5px solid $yellow;
     font-family: 'Roboto', sans-serif;
-    font-size: 20px;
+    font-size: 3vh;
     text-transform: uppercase;
 
     &:active {
@@ -132,7 +132,7 @@ body {
     height: 9vh;
     font-family: 'Roboto', sans-serif;
     font-weight: 100;
-    font-size: 58px;
+    font-size: 6vh;
     color: $black;
     text-align: center;
 }
@@ -154,7 +154,7 @@ body {
     height: 6vh;
     font-family: 'Roboto', sans-serif;
     font-weight: 300;
-    font-size: 25px;
+    font-size: 4.5vh;
     color: #999;
     text-align: center;
 }
@@ -164,14 +164,14 @@ body {
     height: 11vh;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
-    font-size: 70px;
+    font-size: 11vh;
     letter-spacing: -4px;
     color: $yellow;
     text-align: center;
 }
 
 .TemprtrSup {
-    font-size: 40px;
+    font-size: 6vh;
 }
 
 

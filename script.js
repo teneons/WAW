@@ -1,10 +1,14 @@
-//site setings
+//site settings
 const apiId = '2a4a207e504ae6c48ab505a543702a9d';
-let SiteLang = 'en';
-let TypeTemperature;
-let ErrorNotFoundEN = 'Settlement is not found';
-let ErrorEmptyFieldEN = 'Field is empty';
+let SettingsSiteLang = 'en';
+    let ErrorNotFoundEN = 'Settlement is not found';
+    let ErrorEmptyFieldEN = 'Field is empty';
 
+let SettingsUnitsMetric = 'metric';
+let SettingsUnitsImperial = 'imperial';
+
+let SettingsUIModeLight = 'Light';
+let SettingsUIModeBlack = 'Black';
 
 //input part
 let InputCity = document.querySelector('.InputCity');
@@ -22,7 +26,7 @@ let Temperature = document.querySelector('.Temperature');
 async function queryWeather() {
     try{
         InputMessageBox.style.visibility = 'hidden';
-        const getJsonWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${InputCity.value}&lang=${SiteLang}&units=metric&appid=${apiId}`);
+        const getJsonWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${InputCity.value}&lang=${SiteLang}&units=${UnitsImperial}&appid=${apiId}`);
         const data = await getJsonWeather.json();
         return await setWeatherData(data);
     } catch (e) {

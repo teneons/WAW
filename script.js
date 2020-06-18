@@ -58,24 +58,24 @@ function setWeatherData (dataWeather) {
     for(let i of dataWeather.weather){
         StateWeather.innerHTML = i.description;
 
-        if(i.icon == '01d') WeatherIcon.style.backgroundImage = 'url(style/01d.png)';
-        if(i.icon == '01n') WeatherIcon.style.backgroundImage = 'url(style/01n.png)';
-        if(i.icon == '02d') WeatherIcon.style.backgroundImage = 'url(style/02d.png)';
-        if(i.icon == '02n') WeatherIcon.style.backgroundImage = 'url(style/02n.png)';
-        if(i.icon == '03d') WeatherIcon.style.backgroundImage = 'url(style/03n.png)';
-        if(i.icon == '03n') WeatherIcon.style.backgroundImage = 'url(style/03n.png)';
-        if(i.icon == '04d') WeatherIcon.style.backgroundImage = 'url(style/04n.png)';
-        if(i.icon == '04n') WeatherIcon.style.backgroundImage = 'url(style/04n.png)';
-        if(i.icon == '09d') WeatherIcon.style.backgroundImage = 'url(style/09n.png)';
-        if(i.icon == '09n') WeatherIcon.style.backgroundImage = 'url(style/09n.png)';
-        if(i.icon == '10d') WeatherIcon.style.backgroundImage = 'url(style/10d.png)';
-        if(i.icon == '10n') WeatherIcon.style.backgroundImage = 'url(style/10d.png)';
-        if(i.icon == '11d') WeatherIcon.style.backgroundImage = 'url(style/11n.png)';
-        if(i.icon == '11n') WeatherIcon.style.backgroundImage = 'url(style/11n.png)';
-        if(i.icon == '13d') WeatherIcon.style.backgroundImage = 'url(style/13d.png)';
-        if(i.icon == '13n') WeatherIcon.style.backgroundImage = 'url(style/13d.png)';
-        if(i.icon == '50d') WeatherIcon.style.backgroundImage = 'url(style/50n.png)';
-        if(i.icon == '50n') WeatherIcon.style.backgroundImage = 'url(style/50n.png)';
+        if(i.icon == '01d') WeatherIcon.style.backgroundImage = 'url(media/01d.png)';
+        if(i.icon == '01n') WeatherIcon.style.backgroundImage = 'url(media/01n.png)';
+        if(i.icon == '02d') WeatherIcon.style.backgroundImage = 'url(media/02d.png)';
+        if(i.icon == '02n') WeatherIcon.style.backgroundImage = 'url(media/02n.png)';
+        if(i.icon == '03d') WeatherIcon.style.backgroundImage = 'url(media/03n.png)';
+        if(i.icon == '03n') WeatherIcon.style.backgroundImage = 'url(media/03n.png)';
+        if(i.icon == '04d') WeatherIcon.style.backgroundImage = 'url(media/04n.png)';
+        if(i.icon == '04n') WeatherIcon.style.backgroundImage = 'url(media/04n.png)';
+        if(i.icon == '09d') WeatherIcon.style.backgroundImage = 'url(media/09n.png)';
+        if(i.icon == '09n') WeatherIcon.style.backgroundImage = 'url(media/09n.png)';
+        if(i.icon == '10d') WeatherIcon.style.backgroundImage = 'url(media/10d.png)';
+        if(i.icon == '10n') WeatherIcon.style.backgroundImage = 'url(media/10d.png)';
+        if(i.icon == '11d') WeatherIcon.style.backgroundImage = 'url(media/11n.png)';
+        if(i.icon == '11n') WeatherIcon.style.backgroundImage = 'url(media/11n.png)';
+        if(i.icon == '13d') WeatherIcon.style.backgroundImage = 'url(media/13d.png)';
+        if(i.icon == '13n') WeatherIcon.style.backgroundImage = 'url(media/13d.png)';
+        if(i.icon == '50d') WeatherIcon.style.backgroundImage = 'url(media/50n.png)';
+        if(i.icon == '50n') WeatherIcon.style.backgroundImage = 'url(media/50n.png)';
     }
     Temperature.innerHTML = dataWeather.main.temp + '<sup class="TemprtrSup">&degC</sup>';
 }

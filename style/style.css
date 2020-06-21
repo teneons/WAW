@@ -45,7 +45,7 @@ body {
 
 .WeatherContentBlock {
   width: 55vw;
-  height: 70vh;
+  height: 88vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -141,8 +141,8 @@ body {
 }
 
 .WeatherCard {
-  width: 18vw;
-  height: 50vh;
+  width: 35vw;
+  height: 44vh;
   position: absolute;
   left: 0;
   right: 0;
@@ -155,50 +155,57 @@ body {
 }
 
 .NameCity {
-  width: 18vw;
-  height: 9vh;
+  width: 100%;
+  height: 6vh;
   font-family: 'Roboto', sans-serif;
-  font-weight: 100;
-  font-size: 6vh;
-  color: #000000;
+  font-weight: 500;
+  font-size: 4.5vh;
+  color: #777;
   text-align: center;
 }
 
 .WeatherIcon {
-  width: 10vw;
-  height: 10vw;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-  background-image: url();
+  width: 100%;
+  height: 23vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.JustIcon {
+  width: 23vh;
+  height: 23vh;
   background-size: cover;
 }
 
 .StateWeather {
   width: 100%;
-  height: 6vh;
+  height: 5vh;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  font-size: 4.5vh;
+  font-size: 4vh;
   color: #999;
   text-align: center;
 }
 
 .Temperature {
   width: 100%;
-  height: 11vh;
+  height: 9vh;
   font-family: 'Roboto', sans-serif;
   font-weight: 800;
-  font-size: 11vh;
+  font-size: 8vh;
   letter-spacing: -4px;
-  color: #FFA724;
   text-align: center;
 }
 
 .TemprtrSup {
-  font-size: 6vh;
+  font-size: 5vh;
 }
 
 .MapMainBlock {

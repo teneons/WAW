@@ -35,6 +35,7 @@ async function queryWeather() {
         if(e instanceof TypeError) {
             InputMessageBox.style.visibility = 'visible';
             InputMessageBox.innerHTML = ErrorNotFoundEN;
+            InputCity.value = '';
         }
     }
 }
@@ -87,17 +88,11 @@ function setWeatherData (dataWeather) {
     }
 
     //out temperature
-    //#FFA724       #999999
     if(dataWeather.main.temp < 0) {
-        //Temperature.style.color = '#999999';
-        console.log('cold')
-        if(dataWeather.main.temp >= 0) {
-            //Temperature.style.color = '#FFA724';
-            console.log('hot')
-        }
+        Temperature.style.color = '#999999';
     }
-
-    Temperature.innerHTML = dataWeather.main.temp + '<sup class="TemprtrSup">&degC</sup>';
-
-    //
+    if(dataWeather.main.temp >= 0) {
+        Temperature.style.color = '#FFA724';
+    }
+    Temperature.innerHTML = Math.round(dataWeather.main.temp) + '<sup class="TemprtrSup">&degC</sup>';
 }

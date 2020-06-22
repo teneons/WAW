@@ -24,6 +24,17 @@ let Temperature = document.querySelector('.Temperature');
 let TemprtrSup = document.querySelector('.TemprtrSup');
 
 
+//checking field at - empty
+function auditField () {
+    if(InputCity.value == '') {
+        InputMessageBox.style.visibility = 'visible';
+        InputMessageBox.innerHTML = ErrorEmptyFieldEN;
+    } else {
+        InputMessageBox.style.visibility = 'hidden';
+        queryWeather()
+    }
+}
+
 //query
 async function queryWeather() {
     try{
@@ -40,22 +51,12 @@ async function queryWeather() {
     }
 }
 
-//checking field at - empty
-function auditField () {
-    if(InputCity.value == '') {
-        InputMessageBox.style.visibility = 'visible';
-        InputMessageBox.innerHTML = ErrorEmptyFieldEN;
-    } else {
-        InputMessageBox.style.visibility = 'hidden';
-        queryWeather()
-    }
-}
-
 //btn actions
 SearchBtn.addEventListener('click', auditField)
 InputCity.addEventListener('keydown', (event) => {
     if(event.key == 'Enter') auditField();
 })
+
 
 //show data on card
 function setWeatherData (dataWeather) {
@@ -95,4 +96,11 @@ function setWeatherData (dataWeather) {
         Temperature.style.color = '#FFA724';
     }
     Temperature.innerHTML = Math.round(dataWeather.main.temp) + '<sup class="TemprtrSup">&degC</sup>';
+
+    //additional info
+    let coordLat, coordLan;
+    let humidity, pressure; //main
+    let sunrise, sunset; //sys
+    let visibility;
+    let speedWind; //wind
 }

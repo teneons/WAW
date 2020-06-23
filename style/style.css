@@ -149,7 +149,6 @@ body {
   top: 30vh;
   bottom: 0;
   margin: auto;
-  border: 1px solid #ECECEC;
   -webkit-box-shadow: 0px 15px 35px 0px #999999;
           box-shadow: 0px 15px 35px 0px #999999;
 }
@@ -223,7 +222,7 @@ body {
   width: 25vw;
   height: 38vh;
   float: right;
-  border-left: 1.5px solid #000000;
+  border-left: 1px solid #000000;
 }
 
 .SunBlock {
@@ -235,6 +234,7 @@ body {
       grid-template-rows: 12vh;
   -ms-grid-columns: 12vh auto 12vh;
       grid-template-columns: 12vh auto 12vh;
+  border-bottom: 1px solid #000000;
 }
 
 .SunriseBlock, .SunsetBlock {
@@ -251,24 +251,96 @@ body {
   background-image: url(../media/sunset.png);
 }
 
-.ProgressDay {
-  width: 100%;
-  height: auto;
-  float: bottom;
-  background-color: #FFA724;
-}
-
 .SunriseTime, .SunsetTime {
   font-family: 'Roboto', sans-serif;
   font-weight: 800;
   font-size: 4vh;
   text-align: center;
-  color: #999999;
+  color: #999;
+}
+
+.ProgressDayBlock {
+  width: 100%;
+  height: auto;
+  border-bottom: 2.5px solid #999;
+}
+
+.ProgressDay {
+  width: 70%;
+  height: 1.8vh;
+  background-color: #FFA724;
+}
+
+.WeatherOtherInfo {
+  width: 100%;
+  height: 20vh;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-rows: 20vh;
+      grid-template-rows: 20vh;
+  -ms-grid-columns: (25%)[4];
+      grid-template-columns: repeat(4, 25%);
+}
+
+.Humidity, .Pressure, .Visibility, .SpeedWind {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2.2vh;
+  text-align: center;
+  text-transform: uppercase;
+  color: #999;
+}
+
+.Humidity {
+  border-right: 1px solid #000000;
+}
+
+.Pressure {
+  border-right: 1px solid #000000;
+}
+
+.Visibility {
+  border-right: 1px solid #000000;
+}
+
+.CircleData {
+  width: 11vh;
+  height: 11vh;
+  border: 10px solid #FFA724;
+  border-right: 10px solid #999;
+  border-radius: 50%;
+  margin-bottom: 1vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 3vh;
+  color: #999;
 }
 
 .MapMainBlock {
   width: 45vw;
   height: 100vh;
-  background-color: #ECECEC;
+  background-color: #999;
 }
 /*# sourceMappingURL=style.css.map */

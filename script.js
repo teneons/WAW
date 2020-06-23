@@ -22,6 +22,10 @@ let JustIcon = document.querySelector('.JustIcon');
 let StateWeather = document.querySelector('.StateWeather');
 let Temperature = document.querySelector('.Temperature');
 let TemprtrSup = document.querySelector('.TemprtrSup');
+//additional part
+let SunriseTime = document.querySelector('.SunriseTime');
+let SunsetTime = document.querySelector('.SunsetTime');
+
 
 
 //checking field at - empty
@@ -97,10 +101,20 @@ function setWeatherData (dataWeather) {
     }
     Temperature.innerHTML = Math.round(dataWeather.main.temp) + '<sup class="TemprtrSup">&degC</sup>';
 
+    //SunRaiseSet
+    let sunrise = dataWeather.sys.sunrise;
+    let sunset = dataWeather.sys.sunset;
+    let newSunrise = new Date (1000 * sunrise);
+    let newSunset = new Date (1000 * sunset);
+    
+    SunriseTime.innerHTML = `${newSunrise.getHours()}:${newSunrise.getMinutes()}`;
+    SunsetTime.innerHTML = `${newSunset.getHours()}:${newSunset.getMinutes()}`;
+
+
+
     //additional info
     let coordLat, coordLan;
     let humidity, pressure; //main
-    let sunrise, sunset; //sys
     let visibility;
     let speedWind; //wind
 }

@@ -114,8 +114,9 @@ body {
     }
 }
 
+//main weather
 .WeatherCard {
-    width: 35vw;
+    width: 45vw;
     height: 44vh;
     position: absolute;
     left: 0;
@@ -137,6 +138,16 @@ body {
     text-align: center;
 }
 
+//main block
+.JustWeatherBlock {
+    display: flex;
+    float: left;
+}
+.MainDescriptionBlock {
+    width: 20vw;
+    height: 38vh;
+}
+
 .WeatherIcon {
     width: 100%;
     height: 23vh;
@@ -155,8 +166,8 @@ body {
     width: 100%;
     height: 5vh;
     font-family: 'Roboto', sans-serif;
-    font-weight: 300;
-    font-size: 4vh;
+    font-weight: 400;
+    font-size: 3vh;
     color: #999;
     text-align: center;
 }
@@ -166,8 +177,7 @@ body {
     height: 9vh;
     font-family: 'Roboto', sans-serif;
     font-weight: 800;
-    font-size: 8vh;
-    letter-spacing: -4px;
+    font-size: 7vh;
     text-align: center;
 }
 
@@ -175,7 +185,49 @@ body {
     font-size: 5vh;
 }
 
+//additional weather
+.MainAdditionalBlock {
+    width: 25vw;
+    height: 38vh;
+    float: right;
+    border-left: 1.5px solid $black;
+}
 
+//Sun
+.SunBlock {
+    width: 100%;
+    height: 18vh;
+    display: grid;
+    grid-template-rows: 12vh;
+    grid-template-columns: 12vh auto 12vh;
+}
+
+.SunriseBlock, .SunsetBlock {
+    width: 12vh;
+    height: 12vh;
+    background-size: cover;
+}
+.SunriseBlock {
+    background-image: url(../media/sunrise.png);
+}
+.SunsetBlock {
+    background-image: url(../media/sunset.png);
+}
+
+.ProgressDay {
+    width: 100%;
+    height: auto;
+    float: bottom;
+    background-color: $yellow;
+}
+
+.SunriseTime, .SunsetTime {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 4vh;
+    text-align: center;
+    color: #999999;
+}
 
 //MAP BLOCK
 .MapMainBlock {

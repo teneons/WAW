@@ -25,7 +25,10 @@ let TemprtrSup = document.querySelector('.TemprtrSup');
 //additional part
 let SunriseTime = document.querySelector('.SunriseTime');
 let SunsetTime = document.querySelector('.SunsetTime');
-
+let Humidity = document.querySelector('.Humidity');
+let Pressure = document.querySelector('.Pressure');
+let Visibility = document.querySelector('.Visibility');
+let SpeedWind = document.querySelector('.SpeedWind');
 
 
 //checking field at - empty
@@ -64,7 +67,6 @@ InputCity.addEventListener('keydown', (event) => {
 
 //show data on card
 function setWeatherData (dataWeather) {
-                                        console.log(dataWeather)
     //out city name
     NameCity.innerHTML = `${dataWeather.name}, ${dataWeather.sys.country}`;
 
@@ -110,11 +112,9 @@ function setWeatherData (dataWeather) {
     SunriseTime.innerHTML = `${newSunrise.getHours()}:${newSunrise.getMinutes()}`;
     SunsetTime.innerHTML = `${newSunset.getHours()}:${newSunset.getMinutes()}`;
 
-
-
-    //additional info
-    let coordLat, coordLan;
-    let humidity, pressure; //main
-    let visibility;
-    let speedWind; //wind
+    //Additional info
+    Humidity.innerHTML = `${dataWeather.main.humidity} %`;
+    Pressure.innerHTML = `${dataWeather.main.pressure} hPa`;
+    Visibility.innerHTML = `${Math.round(dataWeather.visibility / 1000)} km`;
+    SpeedWind.innerHTML = `${dataWeather.wind.speed} k/h`;
 }

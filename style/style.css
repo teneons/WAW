@@ -311,8 +311,7 @@ body {
 .CircleData {
   width: 11vh;
   height: 11vh;
-  border: 5px solid #FFA724;
-  border-right: 5px solid #999;
+  border: 0.7vh solid #999;
   border-radius: 50%;
   margin-bottom: 1vh;
   display: -webkit-box;
@@ -328,7 +327,11 @@ body {
   font-weight: 500;
   font-size: 2.1vh;
   text-transform: none;
-  color: #999;
+  color: #FFA724;
+}
+
+.Pressure {
+  font-size: 1.9vh;
 }
 
 .MapMainBlock {

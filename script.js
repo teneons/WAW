@@ -112,9 +112,41 @@ function setWeatherData (dataWeather) {
     SunriseTime.innerHTML = `${newSunrise.getHours()}:${newSunrise.getMinutes()}`;
     SunsetTime.innerHTML = `${newSunset.getHours()}:${newSunset.getMinutes()}`;
 
-    //Additional info
-    Humidity.innerHTML = `${dataWeather.main.humidity} %`;
-    Pressure.innerHTML = `${dataWeather.main.pressure} hPa`;
-    Visibility.innerHTML = `${Math.round(dataWeather.visibility / 1000)} km`;
-    SpeedWind.innerHTML = `${dataWeather.wind.speed} k/h`;
+    //convert & out Additional info
+    Humidity.innerHTML = `${dataWeather.main.humidity}%`;
+
+    if(SettingsSiteLang == 'en') {
+        SpeedWind.innerHTML = `${dataWeather.wind.speed} m/s`;
+        Visibility.innerHTML = `${dataWeather.visibility} m`;
+        Pressure.innerHTML = `${dataWeather.main.pressure} hPa`;
+    } else if(SettingsSiteLang == 'ua') {
+        Visibility.innerHTML = `${Math.round(dataWeather.visibility / 1000)} км`;
+        SpeedWind.innerHTML = `${dataWeather.wind.speed * 3.6} км/г`;
+        Pressure.innerHTML = `${Math.round(dataWeather.main.pressure * 0.75006375541921)} мм.рт.ст.`;
+    }
+
+    //change circle color for additional info
+    if(dataWeather.main.humidity >= 80) {
+        Humidity.style.borderColor = '#34A853';
+    } else if(dataWeather.main.humidity >= 60 && dataWeather.main.humidity < 80) {
+        Humidity.style.borderColor = '#FBBC05';
+    } else if(dataWeather.main.humidity < 60) {
+        Humidity.style.borderColor = '#EA4335';
+    }
+
+    if(dataWeather.wind.speed <= 9) {
+        SpeedWind.style.borderColor = '#34A853';
+    } else if(dataWeather.wind.speed >= 10 && dataWeather.wind.speed <= 20) {
+        SpeedWind.style.borderColor = '#FBBC05';
+    } else if(dataWeather.wind.speed > 20) {
+        SpeedWind.style.borderColor = '#EA4335';
+    }
+
+    if(dataWeather.visibility >= 9000) {
+        Visibility.style.borderColor = '#34A853';
+    } else if(dataWeather.visibility >= 3000 && dataWeather.visibility < 9000) {
+        Visibility.style.borderColor = '#FBBC05';
+    } else if(dataWeather.visibility < 2000) {
+        Visibility.style.borderColor = '#EA4335';
+    }
 }

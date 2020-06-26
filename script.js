@@ -52,6 +52,8 @@ async function queryWeather() {
         return await setWeatherData(data);
     } catch (e) {
         if(e instanceof TypeError) {
+            WeatherCard.style.visibility = 'hidden';
+            WeatherCard.style.animationName = '';
             InputMessageBox.style.visibility = 'visible';
             InputMessageBox.innerHTML = ErrorNotFoundEN;
             InputCity.value = '';
@@ -140,6 +142,10 @@ function setWeatherData (dataWeather) {
         Pressure.innerHTML = `${Math.round(dataWeather.main.pressure * 0.75006375541921)} мм.рт.ст.`;
     }
 
+    if(dataWeather.visibility == undefined) {
+        Visibility.innerHTML = `X`;
+    }
+
     //change circle color for additional info
     if(dataWeather.main.humidity >= 80) {
         Humidity.style.borderColor = '#34A853';
@@ -164,4 +170,5 @@ function setWeatherData (dataWeather) {
     } else if(dataWeather.visibility < 2000) {
         Visibility.style.borderColor = '#EA4335';
     }
+
 }

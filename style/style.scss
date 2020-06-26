@@ -9,7 +9,6 @@ $white: #FFFFFF;
 * {
     margin: 0;
     outline-style: none;
-    user-select: none;
     box-sizing: border-box;
 }
 
@@ -22,37 +21,38 @@ body {
 
 //WEATHER BLOCK
 .WeatherMainBlock {
-    width: 55vw;
+    width: 50vw;
     height: 100vh;
     background-color: $white;
-    border-right: 3px solid $black;
+
     position: relative;
 }
 
 //textline
 .TaglineTextBlock {
-    width: 55vw;
+    width: 100%;
     height: 12vh;
     border-bottom: 3px solid $black;
+    user-select: none;
 }
 
 .TaglineText {
     font-family: 'Roboto', sans-serif;
-    font-weight: 500;
-    font-size: 9.8vh;
+    font-weight: 400;
+    font-size: 9vh;
     text-align: center;
 }
 
 //weather content
 .WeatherContentBlock {
-    width: 55vw;
+    width: 100%;
     height: 88vh;
     display: flex;
     flex-direction: column;
 }
 
 .InputSearchBlock {
-    width: 55vw;
+    width: 100%;
     height: 15vh;
     display: flex;
     align-items: center;
@@ -85,6 +85,11 @@ body {
         opacity: 0;
         transition: opacity 0.2s ease;
     }
+
+    &::selection {
+        background-color: $black;
+        color: $yellow;
+    }
 }
 
 .InputMessageBox {
@@ -95,6 +100,7 @@ body {
     bottom: 1.5vh;
     font-family: 'Roboto', sans-serif;
     font-size: 2vh;
+    color: $yellow;
 }
 
 .SearchBtn {
@@ -123,6 +129,16 @@ body {
     bottom: 0;
     margin: auto;
     box-shadow: 0px 15px 35px 0px rgba(153,153,153,1);
+    user-select: none;
+    //animation-name: crawlLine;
+    animation-duration: 1s;
+    visibility: hidden;
+}
+
+@keyframes crawlLine {
+    from {top: 10vh}
+    85% {top: 33vh}
+    to {top: 30vh}
 }
 
 .NameCity {
@@ -135,7 +151,7 @@ body {
     text-align: center;
 }
 
-//main block
+//main weather
 .JustWeatherBlock {
     display: flex;
     float: left;
@@ -225,7 +241,7 @@ body {
     border-bottom: 2.5px solid $grey;
 }
 .ProgressDay {
-    width: 70%;
+    width: 0%;
     height: 1.8vh;
     background-color: $yellow;
 }
@@ -276,7 +292,8 @@ body {
 
 //MAP BLOCK
 .MapMainBlock {
-    width: 45vw;
+    width: 50vw;
     height: 100vh;
     background-color: $grey;
+    border-left: 2px solid $black;
 }

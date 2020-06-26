@@ -25,6 +25,7 @@ let TemprtrSup = document.querySelector('.TemprtrSup');
 //additional part
 let SunriseTime = document.querySelector('.SunriseTime');
 let SunsetTime = document.querySelector('.SunsetTime');
+let ProgressDay = document.querySelector('.ProgressDay');
 let Humidity = document.querySelector('.Humidity');
 let Pressure = document.querySelector('.Pressure');
 let Visibility = document.querySelector('.Visibility');
@@ -67,6 +68,8 @@ InputCity.addEventListener('keydown', (event) => {
 
 //show data on card
 function setWeatherData (dataWeather) {
+    WeatherCard.style.visibility = 'visible';
+    WeatherCard.style.animationName = 'crawlLine';
     //out city name
     NameCity.innerHTML = `${dataWeather.name}, ${dataWeather.sys.country}`;
 
@@ -108,9 +111,21 @@ function setWeatherData (dataWeather) {
     let sunset = dataWeather.sys.sunset;
     let newSunrise = new Date (1000 * sunrise);
     let newSunset = new Date (1000 * sunset);
-    
+
     SunriseTime.innerHTML = `${newSunrise.getHours()}:${newSunrise.getMinutes()}`;
     SunsetTime.innerHTML = `${newSunset.getHours()}:${newSunset.getMinutes()}`;
+
+    //progress rar day
+    let strSunrise = `${newSunrise.getHours()}.${newSunrise.getMinutes()}`;
+    let strSunset = `${newSunset.getHours()}.${newSunset.getMinutes()}`;
+    let d = new Date();
+    let timeNow = `${d.getHours()}.${d.getMinutes()}`;
+
+    let fullDay = strSunset - strSunrise;
+    let dayConducted = timeNow - strSunrise;
+
+    let dayPassInPercent = Math.round((dayConducted / fullDay) * 100);
+    ProgressDay.style.width = `${dayPassInPercent}%`;
 
     //convert & out Additional info
     Humidity.innerHTML = `${dataWeather.main.humidity}%`;

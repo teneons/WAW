@@ -172,5 +172,3 @@ function setWeatherData (dataWeather) {
     }
 
 }
-
-//test

@@ -49,7 +49,7 @@ async function queryWeather() {
         InputMessageBox.style.visibility = 'hidden';
         const getJsonWeather = await fetch(`http://api.openweathermap.org/data/2.5/weather?q=${InputCity.value}&lang=${SettingsSiteLang}&units=${SettingsUnitsMetric}&appid=${apiId}`);
         const data = await getJsonWeather.json();
-        return await setWeatherData(data);
+        return await setWeatherData(data), await getLatLonData(data.name);
     } catch (e) {
         if(e instanceof TypeError) {
             WeatherCard.style.visibility = 'hidden';
@@ -67,6 +67,19 @@ InputCity.addEventListener('keydown', (event) => {
     if(event.key == 'Enter') auditField();
 })
 
+//map part
+async function getLatLonData(cityName) {
+    let nominatimQ = await fetch(`https://nominatim.openstreetmap.org/?addressdetails=0&q='${cityName}'&format=json&limit=1`);
+    let dataCity = await nominatimQ.json();
+    let fourCords;
+    for (let i of dataCity) {
+        fourCords = i.boundingbox;
+        console.log(i.boundingbox)
+    }
+
+    //set to url for map
+    document.querySelector('.JustMap').src = `https://www.openstreetmap.org/export/embed.html?bbox=${fourCords[2]}%2C${fourCords[0]}%2C${fourCords[3]}%2C${fourCords[1]}&amp;layer=mapnik`;
+}
 
 //show data on card
 function setWeatherData (dataWeather) {
@@ -170,5 +183,4 @@ function setWeatherData (dataWeather) {
     } else if(dataWeather.visibility < 2000) {
         Visibility.style.borderColor = '#EA4335';
     }
-
 }

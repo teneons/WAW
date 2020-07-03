@@ -28,7 +28,7 @@ body {
 .TaglineTextBlock {
   width: 100%;
   height: 12vh;
-  border-bottom: 3px solid #000000;
+  border-bottom: 2px solid #000000;
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -78,12 +78,28 @@ body {
   position: relative;
 }
 
+.SettingsBtn {
+  width: 6.5vh;
+  height: 6.5vh;
+  background-color: #FFFFFF;
+  background-image: url(../media/settings.png);
+  background-size: cover;
+  border: none;
+}
+
+.SettingsBtn:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
+}
+
 .InputCity {
-  width: 26vw;
+  width: 25vw;
   height: 7vh;
   background-color: #FFFFFF;
   border: none;
-  border-bottom: 3px solid #000000;
+  border-bottom: 2px solid #000000;
   font-family: 'Roboto', sans-serif;
   font-size: 3vh;
 }
@@ -114,6 +130,12 @@ body {
   transition: opacity 0.2s ease;
 }
 
+.InputCity:focus::-moz-placeholder {
+  opacity: 0;
+  -webkit-transition: opacity 0.2s ease;
+  transition: opacity 0.2s ease;
+}
+
 .InputCity::-moz-selection {
   background-color: #000000;
   color: #FFA724;
@@ -128,10 +150,20 @@ body {
   width: 25vw;
   height: 2.5vh;
   position: absolute;
-  left: 0;
+  left: 6vh;
   bottom: 1.5vh;
   font-family: 'Roboto', sans-serif;
-  font-size: 2vh;
+  font-size: 2.2vh;
+  color: #FFA724;
+}
+
+.InputMessageBox::-moz-selection {
+  background-color: #000000;
+  color: #FFA724;
+}
+
+.InputMessageBox::selection {
+  background-color: #000000;
   color: #FFA724;
 }
 
@@ -144,6 +176,10 @@ body {
   font-family: 'Roboto', sans-serif;
   font-size: 3vh;
   text-transform: uppercase;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
 }
 
 .SearchBtn:active {

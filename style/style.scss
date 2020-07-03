@@ -24,7 +24,6 @@ body {
     width: 50vw;
     height: 100vh;
     background-color: $white;
-
     position: relative;
 }
 
@@ -32,7 +31,7 @@ body {
 .TaglineTextBlock {
     width: 100%;
     height: 12vh;
-    border-bottom: 3px solid $black;
+    border-bottom: 2px solid $black;
     user-select: none;
 }
 
@@ -67,12 +66,26 @@ body {
     position: relative;
 }
 
+.SettingsBtn {
+    width: 6.5vh;
+    height: 6.5vh;
+    background-color: $white;
+    background-image: url(../media/settings.png);
+    background-size: cover;
+    border: none;
+    
+    &:hover {
+        transform: scale(1.1);
+        transition: 0.5s ease;
+    }
+}
+
 .InputCity {
-    width: 26vw;
+    width: 25vw;
     height: 7vh;
     background-color: $white;
     border: none;
-    border-bottom: 3px solid $black;
+    border-bottom: 2px solid $black;
     font-family: 'Roboto', sans-serif;
     font-size: 3vh;
 
@@ -82,6 +95,11 @@ body {
     }
 
     &:focus::-webkit-input-placeholder {
+        opacity: 0;
+        transition: opacity 0.2s ease;
+    }
+
+    &:focus::-moz-placeholder {
         opacity: 0;
         transition: opacity 0.2s ease;
     }
@@ -96,11 +114,16 @@ body {
     width: 25vw;
     height: 2.5vh;
     position: absolute;
-    left: 0;
+    left: 6vh;
     bottom: 1.5vh;
     font-family: 'Roboto', sans-serif;
-    font-size: 2vh;
+    font-size: 2.2vh;
     color: $yellow;
+
+    &::selection {
+        background-color: $black;
+        color: $yellow;
+    }
 }
 
 .SearchBtn {
@@ -112,6 +135,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-size: 3vh;
     text-transform: uppercase;
+    user-select: none;
 
     &:active {
         border: 1px solid $white;

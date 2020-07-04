@@ -8,7 +8,7 @@
 
 body {
   width: 100vw;
-  height: 10vh;
+  height: 100vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -71,7 +71,7 @@ body {
 
 .FormSearchBlock {
   width: 34vw;
-  height: 75px;
+  height: 11vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -79,8 +79,8 @@ body {
 }
 
 .SettingsBtn {
-  width: 6.5vh;
-  height: 6.5vh;
+  width: 7vh;
+  height: 7vh;
   background-color: #FFFFFF;
   background-image: url(../media/settings.png);
   background-size: cover;
@@ -201,8 +201,8 @@ body {
      -moz-user-select: none;
       -ms-user-select: none;
           user-select: none;
-  -webkit-animation-duration: 1s;
-          animation-duration: 1s;
+  -webkit-animation-duration: 0.7s;
+          animation-duration: 0.7s;
   visibility: hidden;
 }
 
@@ -264,6 +264,10 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .JustIcon {
@@ -416,5 +420,152 @@ body {
   height: 100vh;
   background-color: #999;
   border-left: 2px solid #000000;
+}
+
+@media only screen and (max-device-width: 720px) {
+  body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .WeatherMainBlock {
+    width: 100%;
+    height: 70vh;
+  }
+  .TaglineTextBlock {
+    height: 6vh;
+  }
+  .TaglineText {
+    font-weight: 400;
+    font-size: 4.8vh;
+  }
+  .FormSearchBlock {
+    width: 100%;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .SettingsBtn:hover {
+    -webkit-transform: none;
+            transform: none;
+    -webkit-transition: none;
+    transition: none;
+  }
+  .SettingsBtn:active {
+    border-bottom: 2px solid #E0E0E0;
+    border-right: 2px solid #E0E0E0;
+  }
+  .InputCity {
+    width: 60vw;
+  }
+  .InputMessageBox {
+    width: 50vw;
+    left: 7.3vh;
+  }
+  .SearchBtn {
+    width: 26vw;
+    font-size: 2.5vh;
+  }
+  .WeatherCard {
+    width: 97vw;
+    height: 37vh;
+    top: 18vh;
+    border: 1px solid #999;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  @-webkit-keyframes crawlLine {
+    from {
+      top: 10vh;
+    }
+    85% {
+      top: 23vh;
+    }
+    to {
+      top: 18vh;
+    }
+  }
+  @keyframes crawlLine {
+    from {
+      top: 10vh;
+    }
+    85% {
+      top: 23vh;
+    }
+    to {
+      top: 18vh;
+    }
+  }
+  .NameCity {
+    height: 5vh;
+    font-weight: 400;
+    font-size: 4vh;
+  }
+  .MainDescriptionBlock {
+    width: 32vw;
+    height: 32vh;
+  }
+  .WeatherIcon {
+    width: 100%;
+    height: 18vh;
+  }
+  .JustIcon {
+    width: 17vh;
+    height: 17vh;
+  }
+  .StateWeather {
+    font-size: 2.5vh;
+  }
+  .Temperature {
+    height: 8vh;
+    font-size: 6vh;
+  }
+  .TemprtrSup {
+    font-size: 4vh;
+  }
+  .MainAdditionalBlock {
+    width: 64.5vw;
+    height: 31.7vh;
+    border-color: #999;
+  }
+  .SunBlock {
+    height: 16vh;
+    -ms-grid-rows: 11vh;
+        grid-template-rows: 11vh;
+    -ms-grid-columns: 11vh auto 11vh;
+        grid-template-columns: 11vh auto 11vh;
+    border-color: #999;
+  }
+  .SunriseBlock, .SunsetBlock {
+    width: 11vh;
+    height: 11vh;
+  }
+  .SunriseTime, .SunsetTime {
+    font-weight: 600;
+    font-size: 3.5vh;
+  }
+  .WeatherOtherInfo {
+    height: 15.7vh;
+    -ms-grid-rows: 15.7vh;
+        grid-template-rows: 15.7vh;
+  }
+  .AdditionalInfo {
+    font-size: 1.5vh;
+  }
+  .AdditionalInfoBorder {
+    border-color: #999;
+  }
+  .CircleData {
+    width: 8.5vh;
+    height: 8.5vh;
+    border: 0.3vh solid #999;
+    font-weight: 400;
+    font-size: 1.8vh;
+  }
+  .MapMainBlock {
+    width: 100%;
+    height: 85vh;
+  }
 }
 /*# sourceMappingURL=style.css.map */

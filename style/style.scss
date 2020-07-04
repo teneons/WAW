@@ -14,7 +14,7 @@ $white: #FFFFFF;
 
 body {
     width: 100vw;
-    height: 10vh;
+    height: 100vh;
     display: flex;
     flex-direction: row;
 }
@@ -61,14 +61,14 @@ body {
 
 .FormSearchBlock {
     width: 34vw;
-    height: 75px;
+    height: 11vh;
     display: flex;
     position: relative;
 }
 
 .SettingsBtn {
-    width: 6.5vh;
-    height: 6.5vh;
+    width: 7vh;
+    height: 7vh;
     background-color: $white;
     background-image: url(../media/settings.png);
     background-size: cover;
@@ -94,15 +94,15 @@ body {
         color: #E0E0E0;
     }
 
-    &:focus::-webkit-input-placeholder {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-    }
+        &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
 
-    &:focus::-moz-placeholder {
-        opacity: 0;
-        transition: opacity 0.2s ease;
-    }
+        &:focus::-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
 
     &::selection {
         background-color: $black;
@@ -155,7 +155,7 @@ body {
     box-shadow: 0px 15px 35px 0px rgba(153,153,153,1);
     user-select: none;
     //animation-name: crawlLine;
-    animation-duration: 1s;
+    animation-duration: 0.7s;
     visibility: hidden;
 }
 
@@ -191,6 +191,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-direction: column;
 }
 
 .JustIcon {
@@ -320,4 +321,162 @@ body {
     height: 100vh;
     background-color: $grey;
     border-left: 2px solid $black;
+}
+
+//Responsive
+@media only screen and (max-device-width: 720px) {
+    body {
+        flex-direction: column;
+    }
+
+    .WeatherMainBlock {
+        width: 100%;
+        height: 70vh;
+    }
+
+    .TaglineTextBlock {
+        height: 6vh;
+    }
+
+    .TaglineText {
+        font-weight: 400;
+        font-size: 4.8vh;
+    }
+
+    .FormSearchBlock {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .SettingsBtn {
+
+        &:hover {
+            transform: none;
+            transition: none;
+        }
+
+        &:active {
+            border-bottom: 2px solid #E0E0E0;
+            border-right: 2px solid #E0E0E0;
+            //transition: 0.5s ease;
+        }
+    }
+
+    .InputCity {
+        width: 60vw;
+    }
+
+    .InputMessageBox {
+        width: 50vw;
+        left: 7.3vh;
+    }
+
+    .SearchBtn {
+        width: 26vw;
+        font-size: 2.5vh;
+    }
+
+    //card
+    .WeatherCard {
+        width: 97vw;
+        height: 37vh;
+        top: 18vh;
+        border: 1px solid $grey;
+        box-shadow: none;
+    }
+
+    @keyframes crawlLine {
+        from {top: 10vh}
+        85% {top: 23vh}
+        to {top: 18vh}
+    }
+
+    .NameCity {
+        height: 5vh;
+        font-weight: 400;
+        font-size: 4vh;
+    }
+
+    .MainDescriptionBlock {
+        width: 32vw;
+        height: 32vh;
+    }
+
+    .WeatherIcon {
+        width: 100%;
+        height: 18vh;
+    }
+
+    .JustIcon {
+        width: 17vh;
+        height: 17vh;
+    }
+
+    .StateWeather {
+        font-size: 2.5vh;
+    }
+
+    .Temperature {
+        height: 8vh;
+        font-size: 6vh;
+    }
+    .TemprtrSup {
+        font-size: 4vh;
+    }
+
+    //additional weather
+    .MainAdditionalBlock {
+        width: 64.5vw;
+        height: 31.7vh;
+        border-color: $grey;
+    }
+
+    .SunBlock {
+        height: 16vh;
+        grid-template-rows: 11vh;
+        grid-template-columns: 11vh auto 11vh;
+        border-color: $grey;
+    }
+
+    .SunriseBlock, .SunsetBlock {
+        width: 11vh;
+        height: 11vh;
+    }
+
+    .SunriseTime, .SunsetTime {
+        font-weight: 600;
+        font-size: 3.5vh;
+    }
+
+    //other info
+    .WeatherOtherInfo {
+        height: 15.7vh;
+        grid-template-rows: 15.7vh;
+    }
+
+    .AdditionalInfo {
+        font-size: 1.5vh;
+    }
+
+    .AdditionalInfoBorder {
+        border-color: $grey;
+    }
+
+    .CircleData {
+        width: 8.5vh;
+        height: 8.5vh;
+        border: 0.3vh solid $grey;
+        font-weight: 400;
+        font-size: 1.8vh;
+    }
+
+    //MAP BLOCK
+    .MapMainBlock {
+        width: 100%;
+        height: 85vh;
+    }
+}
+
+@media only screen and (max-device-width: 320px) {
+
 }

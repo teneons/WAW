@@ -87,11 +87,8 @@ body {
   border: none;
 }
 
-.SettingsBtn:hover {
-  -webkit-transform: scale(1.1);
-          transform: scale(1.1);
-  -webkit-transition: 0.5s ease;
-  transition: 0.5s ease;
+.SettingsBtn:active {
+  border: 2px solid #FFA724;
 }
 
 .InputCity {
@@ -150,7 +147,7 @@ body {
   width: 25vw;
   height: 2.5vh;
   position: absolute;
-  left: 6vh;
+  left: 7vh;
   bottom: 1.5vh;
   font-family: 'Roboto', sans-serif;
   font-size: 2.2vh;
@@ -422,7 +419,7 @@ body {
   border-left: 2px solid #000000;
 }
 
-@media only screen and (max-device-width: 720px) {
+@media only screen and (max-device-width: 720px), (max-device-width: 1024px) {
   body {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
@@ -445,16 +442,6 @@ body {
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-  }
-  .SettingsBtn:hover {
-    -webkit-transform: none;
-            transform: none;
-    -webkit-transition: none;
-    transition: none;
-  }
-  .SettingsBtn:active {
-    border-bottom: 2px solid #E0E0E0;
-    border-right: 2px solid #E0E0E0;
   }
   .InputCity {
     width: 60vw;
@@ -565,6 +552,18 @@ body {
   }
   .MapMainBlock {
     width: 100%;
+    height: 80vh;
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-width: 1024px) {
+  .WeatherMainBlock {
+    height: 67vh;
+  }
+  .InputMessageBox {
+    left: 9vh;
+  }
+  .MapMainBlock {
     height: 85vh;
   }
 }

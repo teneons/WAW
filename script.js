@@ -156,7 +156,8 @@ function setWeatherData (dataWeather) {
     }
 
     if(dataWeather.visibility == undefined) {
-        Visibility.innerHTML = `X`;
+        Visibility.innerHTML = `..`;
+        Visibility.style.borderColor = '#000000';
     }
 
     //change circle color for additional info

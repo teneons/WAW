@@ -403,19 +403,57 @@ body {
           align-items: center;
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
-  font-size: 2.1vh;
+  font-size: 2vh;
   text-transform: none;
   color: #FFA724;
 }
 
 .Pressure {
-  font-size: 1.9vh;
+  font-size: 1.7vh;
+}
+
+.SettingsWindow {
+  width: 10vw;
+  height: 18vh;
+  position: absolute;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 10vw;
+      grid-template-columns: 10vw;
+  -ms-grid-rows: (4.3vh)[4];
+      grid-template-rows: repeat(4, 4.3vh);
+  border: 1.5px solid #000000;
+}
+
+.SettingsLang, .SettingsTemerature, .SettingsTeheme, .BtnSaveBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 2.5vh;
+}
+
+.BtnSaveSettings {
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  border: 2px dashed #000000;
+}
+
+.BtnSaveSettings:active {
+  border-style: solid;
 }
 
 .MapMainBlock {
   width: 50vw;
   height: 100vh;
-  background-color: #999;
   border-left: 2px solid #000000;
 }
 

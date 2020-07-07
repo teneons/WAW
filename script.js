@@ -1,8 +1,15 @@
 //site settings
 const apiId = '2a4a207e504ae6c48ab505a543702a9d';
-let SettingsSiteLang = 'en';
-    let ErrorNotFoundEN = 'Settlement is not found';
-    let ErrorEmptyFieldEN = 'Field is empty';
+let SettingsSiteLang = 'ua';
+    let LangEN = ['What About the Weather?', 'Input settlement..', 'Settlement is not found', 'Field is empty', 'Search', 'Humidity', 'SpeedWind', 'Visibility', 'Pressure']
+    let LangUA = ['Що по погоді?', 'Введіть населений пункт..', 'Населений пункт не знайдено', 'Пусте поле', 'Пошук', 'Вологість', 'Шв. вітру', 'Видимість', 'Тиск'];
+    let LangNOW;
+
+    if(SettingsSiteLang == 'en') {
+        LangNOW = LangEN;
+    } else if (SettingsSiteLang == 'ua') {
+        LangNOW = LangUA;
+    }
 
 let SettingsUnitsMetric = 'metric';
 let SettingsUnitsImperial = 'imperial';
@@ -10,6 +17,7 @@ let SettingsUnitsImperial = 'imperial';
 let SettingsUIModeLight = 'Light';
 let SettingsUIModeBlack = 'Black';
 
+let TaglineText = document.querySelector('.TaglineText');
 //input part
 let InputCity = document.querySelector('.InputCity');
 let SearchBtn = document.querySelector('.SearchBtn');
@@ -26,20 +34,29 @@ let TemprtrSup = document.querySelector('.TemprtrSup');
 let SunriseTime = document.querySelector('.SunriseTime');
 let SunsetTime = document.querySelector('.SunsetTime');
 let ProgressDay = document.querySelector('.ProgressDay');
+
 let Humidity = document.querySelector('.Humidity');
+let SpeedWind = document.querySelector('.SpeedWind');
 let Pressure = document.querySelector('.Pressure');
 let Visibility = document.querySelector('.Visibility');
-let SpeedWind = document.querySelector('.SpeedWind');
 
+//main lang. audit
+TaglineText.innerText = LangNOW[0];
+InputCity.innerText.placeholder = LangNOW[1];
+SearchBtn.innerText = LangNOW[4];
+document.querySelector('.HumidityTxt').innerText = LangNOW [5];
+document.querySelector('.SpeedWindTxt').innerText = LangNOW[6];
+document.querySelector('.VisibilityTxt').innerText = LangNOW[7];
+document.querySelector('.PressureTxt').innerText = LangNOW [8];
 
 //checking field at - empty
 function auditField () {
     if(InputCity.value == '') {
         InputMessageBox.style.visibility = 'visible';
-        InputMessageBox.innerHTML = ErrorEmptyFieldEN;
+        InputMessageBox.innerHTML = LangNOW[3];
     } else {
         InputMessageBox.style.visibility = 'hidden';
-        queryWeather()
+        queryWeather();
     }
 }
 
@@ -55,7 +72,9 @@ async function queryWeather() {
             WeatherCard.style.visibility = 'hidden';
             WeatherCard.style.animationName = '';
             InputMessageBox.style.visibility = 'visible';
-            InputMessageBox.innerHTML = ErrorNotFoundEN;
+            InputMessageBox.innerHTML = LangNOW[2];
+
+            //if city is false - clear input
             InputCity.value = '';
         }
     }
@@ -74,7 +93,6 @@ async function getLatLonData(cityName) {
     let fourCords;
     for (let i of dataCity) {
         fourCords = i.boundingbox;
-        console.log(i.boundingbox)
     }
 
     //set to url for map
@@ -145,13 +163,15 @@ function setWeatherData (dataWeather) {
     //convert & out Additional info
     Humidity.innerHTML = `${dataWeather.main.humidity}%`;
 
+    console.log(dataWeather.wind.speed)
+
     if(SettingsSiteLang == 'en') {
-        SpeedWind.innerHTML = `${dataWeather.wind.speed} m/s`;
+        SpeedWind.innerHTML = `${dataWeather.wind.speed} mil/h`;
         Visibility.innerHTML = `${dataWeather.visibility} m`;
         Pressure.innerHTML = `${dataWeather.main.pressure} hPa`;
     } else if(SettingsSiteLang == 'ua') {
+        SpeedWind.innerHTML = `${Math.ceil(dataWeather.wind.speed * 3.6)} км/г`;
         Visibility.innerHTML = `${Math.round(dataWeather.visibility / 1000)} км`;
-        SpeedWind.innerHTML = `${dataWeather.wind.speed * 3.6} км/г`;
         Pressure.innerHTML = `${Math.round(dataWeather.main.pressure * 0.75006375541921)} мм.рт.ст.`;
     }
 
@@ -185,3 +205,5 @@ function setWeatherData (dataWeather) {
         Visibility.style.borderColor = '#EA4335';
     }
 }
+
+//site settings

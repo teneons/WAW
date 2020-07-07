@@ -141,6 +141,49 @@ body {
     }
 }
 
+.SettingsWindow {
+    width: 10vw;
+    height: 18vh;
+    position: absolute;
+    top: 33vh;
+    left: 1vw;
+    display: grid;
+    grid-template-columns: 10vw;
+    grid-template-rows: repeat(4, 4.3vh);
+    border: 1.5px solid $black;
+    //animation-name: 'showSettingsWindow';
+    animation-duration: 0.8s;
+    visibility: hidden;
+    background-color: $white;
+}
+
+@keyframes showSettingsWindow {
+    from {top: 29vh};
+    to {top: 33vh};
+}
+
+.SettingsLang, .SettingsTemerature, .SettingsTeheme, .BtnSaveBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    font-weight: 400;
+    font-size: 2.5vh;
+}
+
+.BtnSaveSettings {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: 2px dashed $black;
+    background-color: $white;
+    &:active {
+        border-style: solid;
+    }
+}
+
+
 //main weather
 .WeatherCard {
     width: 45vw;
@@ -312,35 +355,6 @@ body {
 }
 .Pressure {
     font-size: 1.7vh;
-}
-
-.SettingsWindow {
-    width: 10vw;
-    height: 18vh;
-    position: absolute;
-    display: grid;
-    grid-template-columns: 10vw;
-    grid-template-rows: repeat(4, 4.3vh);
-    border: 1.5px solid $black;
-}
-
-.SettingsLang, .SettingsTemerature, .SettingsTeheme, .BtnSaveBlock {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-family: 'Roboto', sans-serif;
-    font-weight: 400;
-    font-size: 2.5vh;
-}
-
-.BtnSaveSettings {
-    width: 5vh;
-    height: 5vh;
-    border-radius: 50%;
-    border: 2px dashed $black;
-    &:active {
-        border-style: solid;
-    }
 }
 
 //MAP BLOCK

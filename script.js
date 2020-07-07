@@ -1,24 +1,37 @@
 //site settings
 const apiId = '2a4a207e504ae6c48ab505a543702a9d';
-let SettingsSiteLang = 'ua';
-    let LangEN = ['What About the Weather?', 'Input settlement..', 'Settlement is not found', 'Field is empty', 'Search', 'Humidity', 'SpeedWind', 'Visibility', 'Pressure']
-    let LangUA = ['Що по погоді?', 'Введіть населений пункт..', 'Населений пункт не знайдено', 'Пусте поле', 'Пошук', 'Вологість', 'Шв. вітру', 'Видимість', 'Тиск'];
-    let LangNOW;
 
-    if(SettingsSiteLang == 'en') {
-        LangNOW = LangEN;
-    } else if (SettingsSiteLang == 'ua') {
-        LangNOW = LangUA;
+let Body = document.body;
+Body.onload = () => {
+    let valueTmpPoint = localStorage.getItem('tempPoint');
+    continueCode: if(valueTmpPoint == 1) {
+        break continueCode;
+    } else if (valueTmpPoint != 1) {
+        localStorage.setItem('tempPoint', 1);
+        localStorage.setItem('language', 'en');
+        localStorage.setItem('Temerature', 'C');
+        localStorage.setItem('Theme', 'Light');
     }
+}
 
-let SettingsUnitsMetric = 'metric';
-let SettingsUnitsImperial = 'imperial';
 
-let SettingsUIModeLight = 'Light';
-let SettingsUIModeBlack = 'Black';
+let SettingsSiteLang = localStorage.getItem('language');
+console.log(SettingsSiteLang)
+
+let LangEN = ['What About the Weather?', 'Input settlement..', 'Settlement is not found', 'Field is empty', 'Search', 'Humidity', 'SpeedWind', 'Visibility', 'Pressure']
+let LangUA = ['Що по погоді?', 'Введіть населений пункт..', 'Населений пункт не знайдено', 'Пусте поле', 'Пошук', 'Вологість', 'Шв. вітру', 'Видимість', 'Тиск'];
+let LangNOW;
+
+if(SettingsSiteLang == 'en') {
+    LangNOW = LangEN;
+} else if (SettingsSiteLang == 'ua') {
+    LangNOW = LangUA;
+}
+
 
 let TaglineText = document.querySelector('.TaglineText');
 //input part
+let SettingsBtn = document.querySelector('.SettingsBtn');
 let InputCity = document.querySelector('.InputCity');
 let SearchBtn = document.querySelector('.SearchBtn');
 let InputMessageBox = document.querySelector('.InputMessageBox');
@@ -34,7 +47,6 @@ let TemprtrSup = document.querySelector('.TemprtrSup');
 let SunriseTime = document.querySelector('.SunriseTime');
 let SunsetTime = document.querySelector('.SunsetTime');
 let ProgressDay = document.querySelector('.ProgressDay');
-
 let Humidity = document.querySelector('.Humidity');
 let SpeedWind = document.querySelector('.SpeedWind');
 let Pressure = document.querySelector('.Pressure');
@@ -58,6 +70,14 @@ function auditField () {
         InputMessageBox.style.visibility = 'hidden';
         queryWeather();
     }
+}
+
+//determine metric
+let SettingsUnitsMetric;
+if(localStorage.getItem('Temerature') == 'C') {
+    SettingsUnitsMetric = 'Metric';
+} else if(localStorage.getItem('Temerature') == 'F') {
+    SettingsUnitsMetric = 'Imperial';
 }
 
 //query
@@ -137,7 +157,15 @@ function setWeatherData (dataWeather) {
     if(dataWeather.main.temp >= 0) {
         Temperature.style.color = '#FFA724';
     }
-    Temperature.innerHTML = Math.round(dataWeather.main.temp) + '<sup class="TemprtrSup">&degC</sup>';
+
+    //show Celsius / Fahrenheit 
+    let CelFah;
+    if(localStorage.getItem('Temerature') == 'C') {
+        CelFah = '&degC'
+    } else if(localStorage.getItem('Temerature') == 'F') {
+        CelFah = '&degF'
+    }
+    Temperature.innerHTML = Math.round(dataWeather.main.temp) + `<sup class="TemprtrSup">${CelFah}</sup>`;
 
     //SunRaiseSet
     let sunrise = dataWeather.sys.sunrise;
@@ -162,8 +190,6 @@ function setWeatherData (dataWeather) {
 
     //convert & out Additional info
     Humidity.innerHTML = `${dataWeather.main.humidity}%`;
-
-    console.log(dataWeather.wind.speed)
 
     if(SettingsSiteLang == 'en') {
         SpeedWind.innerHTML = `${dataWeather.wind.speed} mil/h`;
@@ -207,3 +233,28 @@ function setWeatherData (dataWeather) {
 }
 
 //site settings
+let SettingsWindow = document.querySelector('.SettingsWindow');
+let BtnSaveSettings = document.querySelector('.BtnSaveSettings');
+let SetLangEN = document.querySelector('.SetLangEN');
+let SetLangUA = document.querySelector('.SetLangUA');
+let TemeratureF = document.querySelector('.TemeratureF');
+let TemeratureC = document.querySelector('.TemeratureC');
+let ThemeLight = document.querySelector('.ThemeLight');
+let ThemeDark = document.querySelector('.ThemeDark');
+
+SettingsBtn.addEventListener('click', () => {
+    SettingsWindow.style.animationName = 'showSettingsWindow';
+    SettingsWindow.style.visibility = 'visible';
+})
+
+BtnSaveSettings.addEventListener('click', () => {
+    SettingsWindow.style.visibility = 'hidden';
+})
+
+if (localStorage.language == 'en') {
+    SetLangEN.checked = true;
+    SetLangUA.checked = false;
+} else if (localStorage == 'ua') {
+    SetLangUA.checked = true;
+    SetLangEN.checked = false;
+}

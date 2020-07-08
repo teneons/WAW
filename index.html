@@ -54,38 +54,26 @@
     </div>
 
     <div class="SettingsWindow">
-        <div class="SettingsLang">
-            <label>
-                <span>EN</span>
-                <input type="radio" class="SetLangEN" value="en">
-            </label>
-            <label>
-                <input type="radio" class="SetLangUA" value="ua">
-                <span>UA</span>
-            </label>
-        </div>
-        <div class="SettingsTemerature">
-            <label>
-                <span>&degF</span>
-                <input type="radio" class="TemperatureF" value="F">
-            </label>
-            <label>
-                <input type="radio" class="TemperatureC" value="C">
-                <span>&degС</span>
-            </label>
-        </div>
-        <div class="SettingsTeheme">
-            <label>
-                <span>Light</span>
-                <input type="radio" class="ThemeLight" value="Light">
-            </label>
-            <label>
-                <input type="radio" class="ThemeDark" value="Dark">
-                <span>Dark</span>
-            </label>
-        </div>
+        <form class="SettingsLang">
+            <span>EN</span>
+            <input type="radio" class="SetLangEN" name="Lng" value="en">
+            <input type="radio" class="SetLangUA" name="Lng" value="ua">
+            <span>UA</span>
+        </form>
+        <form class="SettingsTemerature">
+            <span>&degF</span>
+            <input type="radio" class="TemperatureF" name="Tmpr" value="F">
+            <input type="radio" class="TemperatureC" name="Tmpr" value="C">
+            <span>&degС</span>
+        </form>
+        <form class="SettingsTheme">
+            <span>Light</span>
+            <input type="radio" class="ThemeLight" name="Thm" value="Light">
+            <input type="radio" class="ThemeDark" name="Thm" value="Dark">
+            <span>Dark</span>
+        </form>
         <div class="BtnSaveBlock">
-            <button type="button" class="BtnSaveSettings">✔️</button>
+            <button type="button" class="BtnSaveSettings">✔</button>
         </div>
     </div>
 

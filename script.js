@@ -1,6 +1,7 @@
 //site settings
 const apiId = '2a4a207e504ae6c48ab505a543702a9d';
 
+//first load page
 let Body = document.body;
 Body.onload = () => {
     let valueTmpPoint = localStorage.getItem('tempPoint');
@@ -9,14 +10,13 @@ Body.onload = () => {
     } else if (valueTmpPoint != 1) {
         localStorage.setItem('tempPoint', 1);
         localStorage.setItem('language', 'en');
-        localStorage.setItem('Temerature', 'C');
-        localStorage.setItem('Theme', 'Light');
+        localStorage.setItem('temperature', 'C');
+        localStorage.setItem('theme', 'Light');
     }
 }
 
-
+//language  settings
 let SettingsSiteLang = localStorage.getItem('language');
-console.log(SettingsSiteLang)
 
 let LangEN = ['What About the Weather?', 'Input settlement..', 'Settlement is not found', 'Field is empty', 'Search', 'Humidity', 'SpeedWind', 'Visibility', 'Pressure']
 let LangUA = ['Що по погоді?', 'Введіть населений пункт..', 'Населений пункт не знайдено', 'Пусте поле', 'Пошук', 'Вологість', 'Шв. вітру', 'Видимість', 'Тиск'];
@@ -74,9 +74,9 @@ function auditField () {
 
 //determine metric
 let SettingsUnitsMetric;
-if(localStorage.getItem('Temerature') == 'C') {
+if(localStorage.getItem('temperature') == 'C') {
     SettingsUnitsMetric = 'Metric';
-} else if(localStorage.getItem('Temerature') == 'F') {
+} else if(localStorage.getItem('temperature') == 'F') {
     SettingsUnitsMetric = 'Imperial';
 }
 
@@ -160,11 +160,12 @@ function setWeatherData (dataWeather) {
 
     //show Celsius / Fahrenheit 
     let CelFah;
-    if(localStorage.getItem('Temerature') == 'C') {
-        CelFah = '&degC'
-    } else if(localStorage.getItem('Temerature') == 'F') {
-        CelFah = '&degF'
+    if(localStorage.getItem('temperature') == 'C') {
+        CelFah = '&degC';
+    } else if(localStorage.getItem('temperature') == 'F') {
+        CelFah = '&degF';
     }
+    
     Temperature.innerHTML = Math.round(dataWeather.main.temp) + `<sup class="TemprtrSup">${CelFah}</sup>`;
 
     //SunRaiseSet
@@ -237,24 +238,67 @@ let SettingsWindow = document.querySelector('.SettingsWindow');
 let BtnSaveSettings = document.querySelector('.BtnSaveSettings');
 let SetLangEN = document.querySelector('.SetLangEN');
 let SetLangUA = document.querySelector('.SetLangUA');
-let TemeratureF = document.querySelector('.TemeratureF');
-let TemeratureC = document.querySelector('.TemeratureC');
+let TemeratureF = document.querySelector('.TemperatureF');
+let TemeratureC = document.querySelector('.TemperatureC');
 let ThemeLight = document.querySelector('.ThemeLight');
 let ThemeDark = document.querySelector('.ThemeDark');
 
+//show btn
 SettingsBtn.addEventListener('click', () => {
     SettingsWindow.style.animationName = 'showSettingsWindow';
     SettingsWindow.style.visibility = 'visible';
 })
 
+//save data and close btn
 BtnSaveSettings.addEventListener('click', () => {
+    ChangeSettings();
     SettingsWindow.style.visibility = 'hidden';
+    document.location.reload(true);
 })
 
-if (localStorage.language == 'en') {
+//set dedefault values from LS
+if (localStorage.getItem('language') == 'en') {
     SetLangEN.checked = true;
-    SetLangUA.checked = false;
-} else if (localStorage == 'ua') {
+} else if (localStorage.getItem('language') == 'ua') {
     SetLangUA.checked = true;
-    SetLangEN.checked = false;
+}
+
+if (localStorage.getItem('temperature') == 'F') {
+    TemeratureF.checked = true;
+} else if (localStorage.getItem('temperature') == 'C') {
+    TemeratureC.checked = true;
+}
+
+if (localStorage.getItem('theme') == 'Light') {
+    ThemeLight.checked = true;
+} else if (localStorage.getItem('theme') == 'Dark') {
+    ThemeDark.checked = true;
+}
+//REFACTORING ↑↑
+
+//change settings
+let SettingsLang = document.querySelector('.SettingsLang');
+let SettingsTemerature = document.querySelector('.SettingsTemerature');
+let SettingsTheme = document.querySelector('.SettingsTheme');
+
+function ChangeSettings() {
+    let dataLang = new FormData(SettingsLang);
+    let dataTemperature = new FormData(SettingsTemerature);
+    let dataTheme = new FormData(SettingsTheme);
+    
+    //set lang
+    for (let i of dataLang) {
+        localStorage.setItem('language', `${i[1]}`);
+    }
+
+    //set temperature
+    for (let i of dataTemperature) {
+        localStorage.setItem('temperature', `${i[1]}`);
+    }
+
+    //set theme
+    for (let i of dataTheme) {
+        localStorage.setItem('theme', `${i[1]}`);
+    }
+
 }

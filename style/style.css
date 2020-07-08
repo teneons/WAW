@@ -220,7 +220,7 @@ body {
   }
 }
 
-.SettingsLang, .SettingsTemerature, .SettingsTeheme, .BtnSaveBlock {
+.SettingsLang, .SettingsTemerature, .SettingsTheme, .BtnSaveBlock {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -242,9 +242,13 @@ body {
   border-radius: 50%;
   border: 2px dashed #000000;
   background-color: #FFFFFF;
+  font-size: 2vh;
+  text-align: center;
 }
 
 .BtnSaveSettings:active {
+  color: #FFA724;
+  border-color: #FFA724;
   border-style: solid;
 }
 
@@ -499,7 +503,7 @@ body {
   }
   .TaglineText {
     font-weight: 400;
-    font-size: 4.8vh;
+    font-size: 4.2vh;
   }
   .FormSearchBlock {
     width: 100%;
@@ -517,6 +521,31 @@ body {
   .SearchBtn {
     width: 26vw;
     font-size: 2.5vh;
+  }
+  .SettingsWindow {
+    width: 40vw;
+    -ms-grid-columns: 40vw;
+        grid-template-columns: 40vw;
+    -ms-grid-rows: (4.3vh)[4];
+        grid-template-rows: repeat(4, 4.3vh);
+    top: 22vh;
+    left: 3vh;
+  }
+  @-webkit-keyframes showSettingsWindow {
+    from {
+      top: 18vh;
+    }
+    to {
+      top: 22vh;
+    }
+  }
+  @keyframes showSettingsWindow {
+    from {
+      top: 18vh;
+    }
+    to {
+      top: 22vh;
+    }
   }
   .WeatherCard {
     width: 97vw;

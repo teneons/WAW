@@ -82,13 +82,13 @@ body {
   width: 7vh;
   height: 7vh;
   background-color: #FFFFFF;
-  background-image: url(../media/settings.png);
+  background-image: url(../media/settings.svg);
   background-size: cover;
-  border: none;
+  border: 2px solid #FFFFFF;
 }
 
 .SettingsBtn:active {
-  border: 2px solid #FFA724;
+  border-bottom: 2px solid #000000;
 }
 
 .InputCity {
@@ -391,11 +391,11 @@ body {
 }
 
 .SunriseBlock {
-  background-image: url(../media/sunrise.png);
+  background-image: url(../media/sunrice.svg);
 }
 
 .SunsetBlock {
-  background-image: url(../media/sunset.png);
+  background-image: url(../media/sunset.svg);
 }
 
 .SunriseTime, .SunsetTime {

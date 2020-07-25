@@ -1,0 +1,218 @@
+@media (max-width: 599px) {
+  body {
+    width: 100vw;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .WeatherMainBlock {
+    width: 100%;
+    height: 90vh;
+  }
+  .TaglineTextBlock {
+    height: 6vh;
+  }
+  .TaglineText {
+    font-weight: 400;
+    font-size: 4.2vh;
+  }
+  .FormSearchBlock {
+    width: 100%;
+  }
+  .SettingsBtn {
+    width: 5.5vh;
+    height: 5.5vh;
+  }
+  .InputCity {
+    width: 55vw;
+    height: 5.5vh;
+  }
+  .InputMessageBox {
+    width: 50vw;
+    left: 8vh;
+    bottom: -0.1vh;
+  }
+  .SearchBtn {
+    width: 26vw;
+    height: 5.5vh;
+    font-size: 2.5vh;
+  }
+  .SettingsWindow {
+    width: 35vw;
+    -ms-grid-columns: 40vw;
+        grid-template-columns: 40vw;
+    -ms-grid-rows: (4.3vh)[4];
+        grid-template-rows: repeat(4, 4.3vh);
+    top: 22vh;
+    left: 3vh;
+  }
+  @-webkit-keyframes showSettingsWindow {
+    from {
+      top: 18vh;
+    }
+    to {
+      top: 22vh;
+    }
+  }
+  @keyframes showSettingsWindow {
+    from {
+      top: 18vh;
+    }
+    to {
+      top: 22vh;
+    }
+  }
+  .WeatherCard {
+    width: 97vw;
+    height: 37vh;
+    top: 18vh;
+    border: 1px solid #999;
+    -webkit-box-shadow: none;
+            box-shadow: none;
+  }
+  @-webkit-keyframes crawlLine {
+    from {
+      top: 10vh;
+    }
+    85% {
+      top: 23vh;
+    }
+    to {
+      top: 18vh;
+    }
+  }
+  @keyframes crawlLine {
+    from {
+      top: 10vh;
+    }
+    85% {
+      top: 23vh;
+    }
+    to {
+      top: 18vh;
+    }
+  }
+  .NameCity {
+    height: 5vh;
+    font-weight: 400;
+    font-size: 4vh;
+  }
+  .MainDescriptionBlock {
+    width: 32vw;
+    height: 32vh;
+  }
+  .WeatherIcon {
+    width: 100%;
+    height: 18vh;
+  }
+  .JustIcon {
+    width: 16vh;
+    height: 16vh;
+  }
+  .StateWeather {
+    font-size: 2.3vh;
+  }
+  .Temperature {
+    height: 8vh;
+    font-size: 6vh;
+  }
+  .TemprtrSup {
+    font-size: 4vh;
+  }
+  .MainAdditionalBlock {
+    width: 64.5vw;
+    height: 31.7vh;
+    border-color: #999;
+  }
+  .SunBlock {
+    height: 16vh;
+    -ms-grid-rows: 11vh;
+        grid-template-rows: 11vh;
+    -ms-grid-columns: 11vh auto 11vh;
+        grid-template-columns: 11vh auto 11vh;
+    border-color: #999;
+  }
+  .SunriseBlock, .SunsetBlock {
+    width: 11vh;
+    height: 11vh;
+  }
+  .SunriseTime, .SunsetTime {
+    font-weight: 600;
+    font-size: 3.5vh;
+  }
+  .WeatherOtherInfo {
+    height: 15.7vh;
+    -ms-grid-rows: 15.7vh;
+        grid-template-rows: 15.7vh;
+  }
+  .AdditionalInfo {
+    font-size: 1.5vh;
+  }
+  .AdditionalInfoBorder {
+    border-color: #999;
+  }
+  .CircleData {
+    width: 8vh;
+    height: 8vh;
+    border: 0.3vh solid #999;
+    font-weight: 400;
+    font-size: 1.7vh;
+  }
+  .MapMainBlock {
+    display: none;
+  }
+  .BtnShowMap {
+    width: 26vw;
+    height: 5.5vh;
+    color: #FFFFFF;
+    position: absolute;
+    background-color: #FFA724;
+    border: 5px solid #FFA724;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.5vh;
+    text-transform: uppercase;
+    -webkit-user-select: none;
+       -moz-user-select: none;
+        -ms-user-select: none;
+            user-select: none;
+  }
+  .BtnShowMap:active {
+    border: 1px solid #FFFFFF;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  .WeatherMainBlock {
+    height: 67vh;
+  }
+  .SettingsBtn {
+    width: 6vh;
+    height: 6vh;
+  }
+  .InputCity {
+    width: 50vw;
+    height: 6vh;
+  }
+  .InputMessageBox {
+    left: 16vh;
+  }
+  .SearchBtn {
+    width: 15vw;
+    height: 6vh;
+    font-size: 2.3vh;
+  }
+  .SettingsWindow {
+    width: 20vw;
+    -ms-grid-columns: 40vw;
+        grid-template-columns: 40vw;
+    -ms-grid-rows: (4.3vh)[4];
+        grid-template-rows: repeat(4, 4.3vh);
+    top: 22vh;
+    left: 3vh;
+  }
+  .MapMainBlock {
+    height: 80vh;
+  }
+}
+/*# sourceMappingURL=styleResponsive.css.map */

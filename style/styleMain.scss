@@ -1,0 +1,602 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
+
+$black: #000000;
+$blue: #2B3E80;
+$yellow: #FFA724;
+$grey: #999;
+$white: #FFFFFF;
+
+* {
+    margin: 0;
+    outline-style: none;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+
+//WEATHER BLOCK
+.WeatherMainBlock {
+    width: 50vw;
+    height: 100vh;
+    background-color: $white;
+    position: relative;
+}
+
+//textline
+.TaglineTextBlock {
+    width: 100%;
+    height: 12vh;
+    border-bottom: 2px solid $black;
+    user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.TaglineText {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 9vh;
+}
+
+//weather content
+.WeatherContentBlock {
+    width: 100%;
+    height: 88vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.InputSearchBlock {
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 10%;
+}
+
+.FormSearchBlock {
+    width: 34vw;
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.SettingsBtn {
+    width: 7vh;
+    height: 7vh;
+    background-color: $white;
+    background-image: url(../media/settings.svg);
+    background-size: cover;
+    border: 2px solid $white;
+    
+    &:active {
+        border-bottom: 2px solid $black;
+    }
+}
+
+.InputCity {
+    width: 25vw;
+    height: 7vh;
+    background-color: $white;
+    border: none;
+    border-bottom: 2px solid $black;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+
+    &::placeholder {
+        font-size: 2.5vh;
+        color: #E0E0E0;
+    }
+
+        &:focus::-webkit-input-placeholder {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+        &:focus::-moz-placeholder {
+            opacity: 0;
+            transition: opacity 0.2s ease;
+        }
+
+    &::selection {
+        background-color: $black;
+        color: $yellow;
+    }
+}
+
+.InputMessageBox {
+    width: 25vw;
+    height: 2.5vh;
+    position: absolute;
+    left: 7vh;
+    bottom: -1vh;
+    font-family: 'Roboto', sans-serif;
+    font-size: 2.2vh;
+    color: $yellow;
+
+    &::selection {
+        background-color: $black;
+        color: $yellow;
+    }
+}
+
+.SearchBtn {
+    width: 8vw;
+    height: 7vh;
+    color: $white;
+    background-color: $yellow;
+    border: 5px solid $yellow;
+    font-family: 'Roboto', sans-serif;
+    font-size: 3vh;
+    text-transform: uppercase;
+    user-select: none;
+
+    &:active {
+        border: 1px solid $white;
+    }
+}
+
+//settings window
+.SettingsWindow {
+    width: 10vw;
+    height: 18vh;
+    position: absolute;
+    top: 33vh;
+    left: 1vw;
+    display: grid;
+    grid-template-columns: 10vw;
+    grid-template-rows: repeat(4, 4.3vh);
+    border: 1.5px solid $black;
+    justify-content: center;
+    //animation-name: 'showSettingsWindow';
+    animation-duration: 0.8s;
+    visibility: hidden;
+    background-color: $white;
+}
+
+@keyframes showSettingsWindow {
+    from {top: 29vh};
+    to {top: 33vh};
+}
+
+.SettingsLang, .SettingsTemerature, .SettingsTheme, .BtnSaveBlock {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    color: $black;
+    font-weight: 400;
+    font-size: 2.5vh;
+}
+
+.BtnSaveSettings {
+    width: 5vh;
+    height: 5vh;
+    border-radius: 50%;
+    border: 2px dashed $black;
+    background-color: $white;
+    font-size: 2vh;
+    text-align: center;
+    &:active {
+        color: $yellow;
+        border-color: $yellow;
+        border-style: solid;
+    }
+}
+
+
+//main weather
+.WeatherCard {
+    width: 45vw;
+    height: 44vh;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 30vh;
+    bottom: 0;
+    margin: auto;
+    box-shadow: 0px 15px 35px 0px rgba(153,153,153,1);
+    user-select: none;
+    //animation-name: crawlLine;
+    animation-duration: 0.7s;
+    visibility: hidden;
+}
+
+@keyframes crawlLine {
+    from {top: 10vh}
+    85% {top: 33vh}
+    to {top: 30vh}
+}
+
+.NameCity {
+    width: 100%;
+    height: 6vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 4.5vh;
+    color: #777;
+    text-align: center;
+}
+
+//main weather
+.JustWeatherBlock {
+    display: flex;
+    float: left;
+}
+.MainDescriptionBlock {
+    width: 20vw;
+    height: 38vh;
+}
+
+.WeatherIcon {
+    width: 100%;
+    height: 23vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.JustIcon {
+    width: 23vh;
+    height: 23vh;
+    background-size: cover;
+}
+
+.StateWeather {
+    width: 100%;
+    height: 5vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 3vh;
+    color: $grey;
+    text-align: center;
+}
+
+.Temperature {
+    width: 100%;
+    height: 9vh;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 7vh;
+    text-align: center;
+}
+
+.TemprtrSup {
+    font-size: 5vh;
+}
+
+//additional weather
+.MainAdditionalBlock {
+    width: 25vw;
+    height: 38vh;
+    float: right;
+    border-left: 1px solid $black;
+}
+
+//Sun
+.SunBlock {
+    width: 100%;
+    height: 18vh;
+    display: grid;
+    grid-template-rows: 12vh;
+    grid-template-columns: 12vh auto 12vh;
+    border-bottom: 1px solid $black;
+}
+
+.SunriseBlock, .SunsetBlock {
+    width: 12vh;
+    height: 12vh;
+    background-size: cover;
+}
+.SunriseBlock {
+    background-image: url(../media/sunrice.svg);
+}
+.SunsetBlock {
+    background-image: url(../media/sunset.svg);
+}
+.SunriseTime, .SunsetTime {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 800;
+    font-size: 4vh;
+    text-align: center;
+    color: $grey;
+}
+
+.ProgressDayBlock {
+    width: 100%;
+    height: auto;
+    border-bottom: 2.5px solid $grey;
+}
+.ProgressDay {
+    width: 0%;
+    height: 1.8vh;
+    background-color: $yellow;
+}
+
+//Weather other info
+.WeatherOtherInfo {
+    width: 100%;
+    height: 20vh;
+    display: grid;
+    grid-template-rows: 20vh;
+    grid-template-columns: repeat(4, 25%);
+}
+
+.AdditionalInfo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400;
+    font-size: 2.2vh;
+    text-align: center;
+    text-transform: uppercase;
+    color: $grey;
+}
+.AdditionalInfoBorder {
+    border-right: 1px solid $black;
+}
+
+.CircleData {
+    width: 11vh;
+    height: 11vh;
+    border: 0.7vh solid $grey;
+    border-radius: 50%;
+    margin-bottom: 1vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 2vh;
+    text-transform: none;
+    color: $yellow;
+}
+.Pressure {
+    font-size: 1.7vh;
+}
+
+//MAP BLOCK
+.MapMainBlock {
+    width: 50vw;
+    height: 100vh;
+    border-left: 2px solid $black;
+}
+
+.JustMap {
+    width: 100%;
+    height: 100%;
+}
+
+.BtnShowMap {
+    display: none;
+}
+
+// //Responsive
+// //phone only
+// @media (max-width: 599px) {
+//     body {
+//         width: 100vw;
+//         flex-direction: column;
+//     }
+
+//     .WeatherMainBlock {
+//         width: 100%;
+//         height: 90vh;
+//     }
+
+//     .TaglineTextBlock {
+//         height: 6vh;
+//     }
+
+//     .TaglineText {
+//         font-weight: 400;
+//         font-size: 4.2vh;
+//     }
+
+//     .FormSearchBlock {
+//         width: 100%;
+//     }
+
+//     .SettingsBtn {
+//         width: 5.5vh;
+//         height: 5.5vh;
+//     }
+
+//     .InputCity {
+//         width: 55vw;
+//         height: 5.5vh;
+//     }
+
+//     .InputMessageBox {
+//         width: 50vw;
+//         left: 8vh;
+//         bottom: -0.1vh;
+//     }
+
+//     .SearchBtn {
+//         width: 26vw;
+//         height: 5.5vh;
+//         font-size: 2.5vh;
+//     }
+
+//     //settings window
+//     .SettingsWindow {
+//         width: 35vw;
+//         grid-template-columns: 40vw;
+//         grid-template-rows: repeat(4, 4.3vh);
+//         top: 22vh;
+//         left: 3vh;
+//     }
+
+//     @keyframes showSettingsWindow {
+//         from {top: 18vh};
+//         to {top: 22vh};
+//     }
+
+//     //card
+//     .WeatherCard {
+//         width: 97vw;
+//         height: 37vh;
+//         top: 18vh;
+//         border: 1px solid $grey;
+//         box-shadow: none;
+//     }
+
+//     @keyframes crawlLine {
+//         from {top: 10vh}
+//         85% {top: 23vh}
+//         to {top: 18vh}
+//     }
+
+//     .NameCity {
+//         height: 5vh;
+//         font-weight: 400;
+//         font-size: 4vh;
+//     }
+
+//     .MainDescriptionBlock {
+//         width: 32vw;
+//         height: 32vh;
+//     }
+
+//     .WeatherIcon {
+//         width: 100%;
+//         height: 18vh;
+//     }
+
+//     .JustIcon {
+//         width: 16vh;
+//         height: 16vh;
+//     }
+
+//     .StateWeather {
+//         font-size: 2.3vh;
+//     }
+
+//     .Temperature {
+//         height: 8vh;
+//         font-size: 6vh;
+//     }
+//     .TemprtrSup {
+//         font-size: 4vh;
+//     }
+
+//     //additional weather
+//     .MainAdditionalBlock {
+//         width: 64.5vw;
+//         height: 31.7vh;
+//         border-color: $grey;
+//     }
+
+//     .SunBlock {
+//         height: 16vh;
+//         grid-template-rows: 11vh;
+//         grid-template-columns: 11vh auto 11vh;
+//         border-color: $grey;
+//     }
+
+//     .SunriseBlock, .SunsetBlock {
+//         width: 11vh;
+//         height: 11vh;
+//     }
+
+//     .SunriseTime, .SunsetTime {
+//         font-weight: 600;
+//         font-size: 3.5vh;
+//     }
+
+//     //other info
+//     .WeatherOtherInfo {
+//         height: 15.7vh;
+//         grid-template-rows: 15.7vh;
+//     }
+
+//     .AdditionalInfo {
+//         font-size: 1.5vh;
+//     }
+
+//     .AdditionalInfoBorder {
+//         border-color: $grey;
+//     }
+
+//     .CircleData {
+//         width: 8vh;
+//         height: 8vh;
+//         border: 0.3vh solid $grey;
+//         font-weight: 400;
+//         font-size: 1.7vh;
+//     }
+
+//     //MAP BLOCK
+//     .MapMainBlock {
+//         display: none;
+//     }
+
+//     .BtnShowMap {
+//         width: 26vw;
+//         height: 5.5vh;
+//         color: $white;
+//         position: absolute;
+//         background-color: $yellow;
+//         border: 5px solid $yellow;
+//         font-family: 'Roboto', sans-serif;
+//         font-size: 2.5vh;
+//         text-transform: uppercase;
+//         user-select: none;
+    
+//         &:active {
+//             border: 1px solid $white;
+//         }
+//     }
+// }
+
+// @media only screen and (min-width: 768px) and (max-width: 1024px) {
+//     .WeatherMainBlock {
+//         height: 67vh;
+//     }
+
+//     .SettingsBtn {
+//         width: 6vh;
+//         height: 6vh;
+//     }
+
+//     .InputCity {
+//         width: 50vw;
+//         height: 6vh;
+//     }
+
+//     .InputMessageBox {
+//         left: 16vh;
+//     }
+
+//     .SearchBtn {
+//         width: 15vw;
+//         height: 6vh;
+//         font-size: 2.3vh;
+//     }
+
+//     //settings window
+//     .SettingsWindow {
+//         width: 20vw;
+//         grid-template-columns: 40vw;
+//         grid-template-rows: repeat(4, 4.3vh);
+//         top: 22vh;
+//         left: 3vh;
+//     }
+
+//     .MapMainBlock {
+//         height: 80vh;
+//     }
+// }

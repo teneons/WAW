@@ -33,13 +33,15 @@ body {
     height: 12vh;
     border-bottom: 2px solid $black;
     user-select: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .TaglineText {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 9vh;
-    text-align: center;
 }
 
 //weather content
@@ -63,6 +65,8 @@ body {
     width: 34vw;
     height: 11vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
     position: relative;
 }
 
@@ -89,7 +93,7 @@ body {
     font-size: 3vh;
 
     &::placeholder {
-        font-size: 15px;
+        font-size: 2.5vh;
         color: #E0E0E0;
     }
 
@@ -114,7 +118,7 @@ body {
     height: 2.5vh;
     position: absolute;
     left: 7vh;
-    bottom: 1.5vh;
+    bottom: -1vh;
     font-family: 'Roboto', sans-serif;
     font-size: 2.2vh;
     color: $yellow;
@@ -152,6 +156,7 @@ body {
     grid-template-columns: 10vw;
     grid-template-rows: repeat(4, 4.3vh);
     border: 1.5px solid $black;
+    justify-content: center;
     //animation-name: 'showSettingsWindow';
     animation-duration: 0.8s;
     visibility: hidden;
@@ -369,15 +374,26 @@ body {
     border-left: 2px solid $black;
 }
 
+.JustMap {
+    width: 100%;
+    height: 100%;
+}
+
+.BtnShowMap {
+    display: none;
+}
+
 //Responsive
-@media only screen and (max-device-width: 720px), (max-device-width: 1024px) {
+//phone only
+@media (max-width: 599px) {
     body {
+        width: 100vw;
         flex-direction: column;
     }
 
     .WeatherMainBlock {
         width: 100%;
-        height: 70vh;
+        height: 90vh;
     }
 
     .TaglineTextBlock {
@@ -391,26 +407,33 @@ body {
 
     .FormSearchBlock {
         width: 100%;
-        justify-content: center;
+    }
+
+    .SettingsBtn {
+        width: 5.5vh;
+        height: 5.5vh;
     }
 
     .InputCity {
-        width: 60vw;
+        width: 55vw;
+        height: 5.5vh;
     }
 
     .InputMessageBox {
         width: 50vw;
-        left: 7.3vh;
+        left: 8vh;
+        bottom: -0.1vh;
     }
 
     .SearchBtn {
         width: 26vw;
+        height: 5.5vh;
         font-size: 2.5vh;
     }
 
     //settings window
     .SettingsWindow {
-        width: 40vw;
+        width: 35vw;
         grid-template-columns: 40vw;
         grid-template-rows: repeat(4, 4.3vh);
         top: 22vh;
@@ -454,12 +477,12 @@ body {
     }
 
     .JustIcon {
-        width: 17vh;
-        height: 17vh;
+        width: 16vh;
+        height: 16vh;
     }
 
     .StateWeather {
-        font-size: 2.5vh;
+        font-size: 2.3vh;
     }
 
     .Temperature {
@@ -509,27 +532,68 @@ body {
     }
 
     .CircleData {
-        width: 8.5vh;
-        height: 8.5vh;
+        width: 8vh;
+        height: 8vh;
         border: 0.3vh solid $grey;
         font-weight: 400;
-        font-size: 1.8vh;
+        font-size: 1.7vh;
     }
 
     //MAP BLOCK
     .MapMainBlock {
-        width: 100%;
-        height: 70vh;
+        display: none;
+    }
+
+    .BtnShowMap {
+        width: 26vw;
+        height: 5.5vh;
+        color: $white;
+        position: absolute;
+        background-color: $yellow;
+        border: 5px solid $yellow;
+        font-family: 'Roboto', sans-serif;
+        font-size: 2.5vh;
+        text-transform: uppercase;
+        user-select: none;
+    
+        &:active {
+            border: 1px solid $white;
+        }
     }
 }
 
-@media only screen and (min-device-width: 768px) and (max-width: 1024px) {
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
     .WeatherMainBlock {
         height: 67vh;
     }
 
+    .SettingsBtn {
+        width: 6vh;
+        height: 6vh;
+    }
+
+    .InputCity {
+        width: 50vw;
+        height: 6vh;
+    }
+
     .InputMessageBox {
-        left: 9vh;
+        left: 16vh;
+    }
+
+    .SearchBtn {
+        width: 15vw;
+        height: 6vh;
+        font-size: 2.3vh;
+    }
+
+    //settings window
+    .SettingsWindow {
+        width: 20vw;
+        grid-template-columns: 40vw;
+        grid-template-rows: repeat(4, 4.3vh);
+        top: 22vh;
+        left: 3vh;
     }
 
     .MapMainBlock {

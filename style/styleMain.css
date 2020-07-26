@@ -48,6 +48,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 9vh;
+  color: #000000;
 }
 
 .WeatherContentBlock {
@@ -507,9 +508,5 @@ body {
 .JustMap {
   width: 100%;
   height: 100%;
-}
-
-.BtnShowMap {
-  display: none;
 }
 /*# sourceMappingURL=styleMain.css.map */

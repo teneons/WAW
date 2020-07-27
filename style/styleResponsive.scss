@@ -1,9 +1,3 @@
-$black: #000000;
-$blue: #2B3E80;
-$yellow: #FFA724;
-$grey: #999;
-$white: #FFFFFF;
-
 //phone only
 @media (max-width: 599px) {
     body {
@@ -13,7 +7,7 @@ $white: #FFFFFF;
 
     .WeatherMainBlock {
         width: 100%;
-        height: 90vh;
+        height: 100vh;
     }
 
     .TaglineTextBlock {
@@ -70,7 +64,7 @@ $white: #FFFFFF;
         width: 97vw;
         height: 37vh;
         top: 18vh;
-        border: 1px solid $grey;
+        border: 1px solid var(--color-Grey-to-White);
         box-shadow: none;
     }
 
@@ -117,14 +111,14 @@ $white: #FFFFFF;
     .MainAdditionalBlock {
         width: 64.5vw;
         height: 31.7vh;
-        border-color: $grey;
+        border-color: var(--color-Grey-to-White);
     }
 
     .SunBlock {
         height: 16vh;
         grid-template-rows: 11vh;
         grid-template-columns: 11vh auto 11vh;
-        border-color: $grey;
+        border-color: var(--color-Grey-to-White);
     }
 
     .SunriseBlock, .SunsetBlock {
@@ -148,13 +142,13 @@ $white: #FFFFFF;
     }
 
     .AdditionalInfoBorder {
-        border-color: $grey;
+        border-color: var(--color-Grey-to-White);
     }
 
     .CircleData {
         width: 8vh;
         height: 8vh;
-        border: 0.3vh solid $grey;
+        border: 0.3vh solid var(--color-Grey-to-White);
         font-weight: 400;
         font-size: 1.7vh;
     }
@@ -163,28 +157,11 @@ $white: #FFFFFF;
     .MapMainBlock {
         display: none;
     }
-
-    .BtnShowMap {
-        width: 26vw;
-        height: 5.5vh;
-        color: $white;
-        position: absolute;
-        background-color: $yellow;
-        border: 5px solid $yellow;
-        font-family: 'Roboto', sans-serif;
-        font-size: 2.5vh;
-        text-transform: uppercase;
-        user-select: none;
-    
-        &:active {
-            border: 1px solid $white;
-        }
-    }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
     .WeatherMainBlock {
-        height: 67vh;
+        height: 100vh;
     }
 
     .SettingsBtn {
@@ -217,6 +194,6 @@ $white: #FFFFFF;
     }
 
     .MapMainBlock {
-        height: 80vh;
+        display: none;
     }
 }

@@ -6,6 +6,13 @@
           box-sizing: border-box;
 }
 
+html:root {
+  --color-White-to-Black: #fff;
+  --color-Black-to-White: #000;
+  --color-Grey-to-White: #999;
+  --color-Shadow: rgba(153,153,153,1);
+}
+
 body {
   width: 100vw;
   height: 100vh;
@@ -21,14 +28,14 @@ body {
 .WeatherMainBlock {
   width: 50vw;
   height: 100vh;
-  background-color: #FFFFFF;
+  background-color: var(--color-White-to-Black);
   position: relative;
 }
 
 .TaglineTextBlock {
   width: 100%;
   height: 12vh;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid var(--color-Black-to-White);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -48,6 +55,7 @@ body {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 9vh;
+  color: var(--color-Black-to-White);
 }
 
 .WeatherContentBlock {
@@ -95,24 +103,25 @@ body {
 .SettingsBtn {
   width: 7vh;
   height: 7vh;
-  background-color: #FFFFFF;
+  background-color: var(--color-White-to-Black);
   background-image: url(../media/settings.svg);
   background-size: cover;
-  border: 2px solid #FFFFFF;
+  border: 2px solid var(--color-White-to-Black);
 }
 
 .SettingsBtn:active {
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid var(--color-Black-to-White);
 }
 
 .InputCity {
   width: 25vw;
   height: 7vh;
-  background-color: #FFFFFF;
+  background-color: var(--color-White-to-Black);
   border: none;
-  border-bottom: 2px solid #000000;
+  border-bottom: 2px solid var(--color-Black-to-White);
   font-family: 'Roboto', sans-serif;
   font-size: 3vh;
+  color: var(--color-Black-to-White);
 }
 
 .InputCity::-webkit-input-placeholder {
@@ -148,12 +157,12 @@ body {
 }
 
 .InputCity::-moz-selection {
-  background-color: #000000;
+  background-color: var(--color-Black-to-White);
   color: #FFA724;
 }
 
 .InputCity::selection {
-  background-color: #000000;
+  background-color: var(--color-Black-to-White);
   color: #FFA724;
 }
 
@@ -169,12 +178,12 @@ body {
 }
 
 .InputMessageBox::-moz-selection {
-  background-color: #000000;
+  background-color: var(--color-Black-to-White);
   color: #FFA724;
 }
 
 .InputMessageBox::selection {
-  background-color: #000000;
+  background-color: var(--color-Black-to-White);
   color: #FFA724;
 }
 
@@ -194,7 +203,7 @@ body {
 }
 
 .SearchBtn:active {
-  border: 1px solid #FFFFFF;
+  border: 1px solid var(--color-White-to-Black);
 }
 
 .SettingsWindow {
@@ -209,14 +218,14 @@ body {
       grid-template-columns: 10vw;
   -ms-grid-rows: (4.3vh)[4];
       grid-template-rows: repeat(4, 4.3vh);
-  border: 1.5px solid #000000;
+  border: 1.5px solid var(--color-Black-to-White);
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
   -webkit-animation-duration: 0.8s;
           animation-duration: 0.8s;
   visibility: hidden;
-  background-color: #FFFFFF;
+  background-color: var(--color-White-to-Black);
 }
 
 @-webkit-keyframes showSettingsWindow {
@@ -248,7 +257,7 @@ body {
       -ms-flex-align: center;
           align-items: center;
   font-family: 'Roboto', sans-serif;
-  color: #000000;
+  color: var(--color-Black-to-White);
   font-weight: 400;
   font-size: 2.5vh;
 }
@@ -257,14 +266,14 @@ body {
   width: 5vh;
   height: 5vh;
   border-radius: 50%;
-  border: 2px dashed #000000;
-  background-color: #FFFFFF;
+  border: 2px dashed var(--color-Black-to-White);
+  background-color: var(--color-White-to-Black);
   font-size: 2vh;
   text-align: center;
+  color: #FFA724;
 }
 
 .BtnSaveSettings:active {
-  color: #FFA724;
   border-color: #FFA724;
   border-style: solid;
 }
@@ -278,8 +287,8 @@ body {
   top: 30vh;
   bottom: 0;
   margin: auto;
-  -webkit-box-shadow: 0px 15px 35px 0px #999999;
-          box-shadow: 0px 15px 35px 0px #999999;
+  -webkit-box-shadow: 0px 15px 35px 0px var(--color-Shadow);
+          box-shadow: 0px 15px 35px 0px var(--color-Shadow);
   -webkit-user-select: none;
      -moz-user-select: none;
       -ms-user-select: none;
@@ -386,7 +395,7 @@ body {
   width: 25vw;
   height: 38vh;
   float: right;
-  border-left: 1px solid #000000;
+  border-left: 1px solid var(--color-Black-to-White);
 }
 
 .SunBlock {
@@ -398,7 +407,7 @@ body {
       grid-template-rows: 12vh;
   -ms-grid-columns: 12vh auto 12vh;
       grid-template-columns: 12vh auto 12vh;
-  border-bottom: 1px solid #000000;
+  border-bottom: 1px solid var(--color-Black-to-White);
 }
 
 .SunriseBlock, .SunsetBlock {
@@ -469,7 +478,7 @@ body {
 }
 
 .AdditionalInfoBorder {
-  border-right: 1px solid #000000;
+  border-right: 1px solid var(--color-Black-to-White);
 }
 
 .CircleData {
@@ -501,16 +510,12 @@ body {
 .MapMainBlock {
   width: 50vw;
   height: 100vh;
-  border-left: 2px solid #000000;
+  border-left: 2px solid var(--color-Black-to-White);
 }
 
 .JustMap {
   width: 100%;
   height: 100%;
-}
-
-.BtnShowMap {
-  display: none;
 }
 
 @media (max-width: 599px) {
@@ -523,7 +528,7 @@ body {
   }
   .WeatherMainBlock {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
   }
   .TaglineTextBlock {
     height: 6vh;
@@ -582,7 +587,7 @@ body {
     width: 97vw;
     height: 37vh;
     top: 18vh;
-    border: 1px solid #999;
+    border: 1px solid var(--color-Grey-to-White);
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -638,7 +643,7 @@ body {
   .MainAdditionalBlock {
     width: 64.5vw;
     height: 31.7vh;
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .SunBlock {
     height: 16vh;
@@ -646,7 +651,7 @@ body {
         grid-template-rows: 11vh;
     -ms-grid-columns: 11vh auto 11vh;
         grid-template-columns: 11vh auto 11vh;
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .SunriseBlock, .SunsetBlock {
     width: 11vh;
@@ -665,41 +670,23 @@ body {
     font-size: 1.5vh;
   }
   .AdditionalInfoBorder {
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .CircleData {
     width: 8vh;
     height: 8vh;
-    border: 0.3vh solid #999;
+    border: 0.3vh solid var(--color-Grey-to-White);
     font-weight: 400;
     font-size: 1.7vh;
   }
   .MapMainBlock {
     display: none;
   }
-  .BtnShowMap {
-    width: 26vw;
-    height: 5.5vh;
-    color: #FFFFFF;
-    position: absolute;
-    background-color: #FFA724;
-    border: 5px solid #FFA724;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.5vh;
-    text-transform: uppercase;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  .BtnShowMap:active {
-    border: 1px solid #FFFFFF;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .WeatherMainBlock {
-    height: 67vh;
+    height: 100vh;
   }
   .SettingsBtn {
     width: 6vh;
@@ -727,7 +714,7 @@ body {
     left: 3vh;
   }
   .MapMainBlock {
-    height: 80vh;
+    display: none;
   }
 }
 /*# sourceMappingURL=style.css.map */

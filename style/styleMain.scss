@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap');
 
-$black: #000000;
-$blue: #2B3E80;
+//$black: #000000;
+//$blue: #2B3E80;
 $yellow: #FFA724;
 $grey: #999;
 $white: #FFFFFF;
@@ -12,6 +12,15 @@ $white: #FFFFFF;
     box-sizing: border-box;
 }
 
+html {
+    &:root {
+        --color-White-to-Black: #fff;
+        --color-Black-to-White: #000;
+        --color-Grey-to-White: #999;
+        --color-Shadow: rgba(153,153,153,1);
+    }
+}
+
 body {
     width: 100vw;
     height: 100vh;
@@ -19,11 +28,12 @@ body {
     flex-direction: row;
 }
 
+
 //WEATHER BLOCK
 .WeatherMainBlock {
     width: 50vw;
     height: 100vh;
-    background-color: $white;
+    background-color: var(--color-White-to-Black);
     position: relative;
 }
 
@@ -31,7 +41,7 @@ body {
 .TaglineTextBlock {
     width: 100%;
     height: 12vh;
-    border-bottom: 2px solid $black;
+    border-bottom: 2px solid var(--color-Black-to-White);
     user-select: none;
     display: flex;
     align-items: center;
@@ -42,7 +52,7 @@ body {
     font-family: 'Roboto', sans-serif;
     font-weight: 400;
     font-size: 9vh;
-    color: $black;
+    color: var(--color-Black-to-White);
 }
 
 
@@ -75,24 +85,25 @@ body {
 .SettingsBtn {
     width: 7vh;
     height: 7vh;
-    background-color: $white;
+    background-color: var(--color-White-to-Black);
     background-image: url(../media/settings.svg);
     background-size: cover;
-    border: 2px solid $white;
+    border: 2px solid var(--color-White-to-Black);
     
     &:active {
-        border-bottom: 2px solid $black;
+        border-bottom: 2px solid var(--color-Black-to-White);
     }
 }
 
 .InputCity {
     width: 25vw;
     height: 7vh;
-    background-color: $white;
+    background-color:  var(--color-White-to-Black);
     border: none;
-    border-bottom: 2px solid $black;
+    border-bottom: 2px solid var(--color-Black-to-White);
     font-family: 'Roboto', sans-serif;
     font-size: 3vh;
+    color: var(--color-Black-to-White);
 
     &::placeholder {
         font-size: 2.5vh;
@@ -110,7 +121,7 @@ body {
         }
 
     &::selection {
-        background-color: $black;
+        background-color: var(--color-Black-to-White);
         color: $yellow;
     }
 }
@@ -126,7 +137,7 @@ body {
     color: $yellow;
 
     &::selection {
-        background-color: $black;
+        background-color: var(--color-Black-to-White);
         color: $yellow;
     }
 }
@@ -143,7 +154,7 @@ body {
     user-select: none;
 
     &:active {
-        border: 1px solid $white;
+        border: 1px solid var(--color-White-to-Black);
     }
 }
 
@@ -157,12 +168,12 @@ body {
     display: grid;
     grid-template-columns: 10vw;
     grid-template-rows: repeat(4, 4.3vh);
-    border: 1.5px solid $black;
+    border: 1.5px solid var(--color-Black-to-White);
     justify-content: center;
     //animation-name: 'showSettingsWindow';
     animation-duration: 0.8s;
     visibility: hidden;
-    background-color: $white;
+    background-color:  var(--color-White-to-Black);
 }
 
 @keyframes showSettingsWindow {
@@ -175,7 +186,7 @@ body {
     justify-content: center;
     align-items: center;
     font-family: 'Roboto', sans-serif;
-    color: $black;
+    color: var(--color-Black-to-White);
     font-weight: 400;
     font-size: 2.5vh;
 }
@@ -184,12 +195,12 @@ body {
     width: 5vh;
     height: 5vh;
     border-radius: 50%;
-    border: 2px dashed $black;
-    background-color: $white;
+    border: 2px dashed var(--color-Black-to-White);
+    background-color:  var(--color-White-to-Black);
     font-size: 2vh;
     text-align: center;
+    color: $yellow;
     &:active {
-        color: $yellow;
         border-color: $yellow;
         border-style: solid;
     }
@@ -206,7 +217,7 @@ body {
     top: 30vh;
     bottom: 0;
     margin: auto;
-    box-shadow: 0px 15px 35px 0px rgba(153,153,153,1);
+    box-shadow: 0px 15px 35px 0px var(--color-Shadow);
     user-select: none;
     //animation-name: crawlLine;
     animation-duration: 0.7s;
@@ -282,7 +293,7 @@ body {
     width: 25vw;
     height: 38vh;
     float: right;
-    border-left: 1px solid $black;
+    border-left: 1px solid var(--color-Black-to-White);
 }
 
 //Sun
@@ -292,7 +303,7 @@ body {
     display: grid;
     grid-template-rows: 12vh;
     grid-template-columns: 12vh auto 12vh;
-    border-bottom: 1px solid $black;
+    border-bottom: 1px solid var(--color-Black-to-White);
 }
 
 .SunriseBlock, .SunsetBlock {
@@ -347,7 +358,7 @@ body {
     color: $grey;
 }
 .AdditionalInfoBorder {
-    border-right: 1px solid $black;
+    border-right: 1px solid var(--color-Black-to-White);
 }
 
 .CircleData {
@@ -373,7 +384,7 @@ body {
 .MapMainBlock {
     width: 50vw;
     height: 100vh;
-    border-left: 2px solid $black;
+    border-left: 2px solid var(--color-Black-to-White);
 }
 
 .JustMap {

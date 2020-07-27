@@ -28,6 +28,19 @@ if(SettingsSiteLang == 'en') {
     LangNOW = LangUA;
 }
 
+//dark mode
+const SettingsSiteTheme = localStorage.getItem('theme');
+
+if(SettingsSiteTheme == 'Light') {
+    document.querySelector('html').style.setProperty('--color-White-to-Black', '#fff');
+    document.querySelector('html').style.setProperty('--color-Black-to-White', '#000');
+    document.querySelector('html').style.setProperty('--color-Grey-to-White', '#999');
+    
+} else if(localStorage.getItem('theme') == 'Dark') {
+    document.querySelector('html').style.setProperty('--color-White-to-Black', '#000');
+    document.querySelector('html').style.setProperty('--color-Black-to-White', '#fff');
+    document.querySelector('html').style.setProperty('--color-Grey-to-White', '#fff');
+}
 
 let TaglineText = document.querySelector('.TaglineText');
 //input part
@@ -51,6 +64,9 @@ let Humidity = document.querySelector('.Humidity');
 let SpeedWind = document.querySelector('.SpeedWind');
 let Pressure = document.querySelector('.Pressure');
 let Visibility = document.querySelector('.Visibility');
+let BtnShowMap = document.querySelector('.BtnShowMap');
+let JustMap = document.querySelector('.JustMap');
+
 
 //main lang. audit
 TaglineText.innerText = LangNOW[0];
@@ -118,6 +134,9 @@ async function getLatLonData(cityName) {
     //set to url for map
     document.querySelector('.JustMap').src = `https://www.openstreetmap.org/export/embed.html?bbox=${fourCords[2]}%2C${fourCords[0]}%2C${fourCords[3]}%2C${fourCords[1]}&amp;layer=mapnik`;
 }
+
+// if(window.innerWidth <= 599) {
+// }
 
 //show data on card
 function setWeatherData (dataWeather) {
@@ -243,7 +262,7 @@ let TemeratureC = document.querySelector('.TemperatureC');
 let ThemeLight = document.querySelector('.ThemeLight');
 let ThemeDark = document.querySelector('.ThemeDark');
 
-//show btn
+//btn show settings
 SettingsBtn.addEventListener('click', () => {
     SettingsWindow.style.animationName = 'showSettingsWindow';
     SettingsWindow.style.visibility = 'visible';
@@ -271,6 +290,7 @@ if (localStorage.getItem('temperature') == 'F') {
 
 if (localStorage.getItem('theme') == 'Light') {
     ThemeLight.checked = true;
+    //dark mode
 } else if (localStorage.getItem('theme') == 'Dark') {
     ThemeDark.checked = true;
 }

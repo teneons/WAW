@@ -8,7 +8,7 @@
   }
   .WeatherMainBlock {
     width: 100%;
-    height: 90vh;
+    height: 100vh;
   }
   .TaglineTextBlock {
     height: 6vh;
@@ -67,7 +67,7 @@
     width: 97vw;
     height: 37vh;
     top: 18vh;
-    border: 1px solid #999;
+    border: 1px solid var(--color-Grey-to-White);
     -webkit-box-shadow: none;
             box-shadow: none;
   }
@@ -123,7 +123,7 @@
   .MainAdditionalBlock {
     width: 64.5vw;
     height: 31.7vh;
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .SunBlock {
     height: 16vh;
@@ -131,7 +131,7 @@
         grid-template-rows: 11vh;
     -ms-grid-columns: 11vh auto 11vh;
         grid-template-columns: 11vh auto 11vh;
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .SunriseBlock, .SunsetBlock {
     width: 11vh;
@@ -150,41 +150,23 @@
     font-size: 1.5vh;
   }
   .AdditionalInfoBorder {
-    border-color: #999;
+    border-color: var(--color-Grey-to-White);
   }
   .CircleData {
     width: 8vh;
     height: 8vh;
-    border: 0.3vh solid #999;
+    border: 0.3vh solid var(--color-Grey-to-White);
     font-weight: 400;
     font-size: 1.7vh;
   }
   .MapMainBlock {
     display: none;
   }
-  .BtnShowMap {
-    width: 26vw;
-    height: 5.5vh;
-    color: #FFFFFF;
-    position: absolute;
-    background-color: #FFA724;
-    border: 5px solid #FFA724;
-    font-family: 'Roboto', sans-serif;
-    font-size: 2.5vh;
-    text-transform: uppercase;
-    -webkit-user-select: none;
-       -moz-user-select: none;
-        -ms-user-select: none;
-            user-select: none;
-  }
-  .BtnShowMap:active {
-    border: 1px solid #FFFFFF;
-  }
 }
 
 @media only screen and (min-width: 768px) and (max-width: 1024px) {
   .WeatherMainBlock {
-    height: 67vh;
+    height: 100vh;
   }
   .SettingsBtn {
     width: 6vh;
@@ -212,7 +194,7 @@
     left: 3vh;
   }
   .MapMainBlock {
-    height: 80vh;
+    display: none;
   }
 }
 /*# sourceMappingURL=styleResponsive.css.map */

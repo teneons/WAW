@@ -333,6 +333,7 @@ body {
 }
 
 .JustWeatherBlock {
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -440,7 +441,7 @@ body {
 
 .ProgressDay {
   width: 0%;
-  height: 1.8vh;
+  height: 1.5vh;
   background-color: #FFA724;
 }
 
@@ -501,6 +502,7 @@ body {
   font-size: 2vh;
   text-transform: none;
   color: #FFA724;
+  text-align: center;
 }
 
 .Pressure {

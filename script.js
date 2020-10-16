@@ -1,3 +1,10 @@
+/*
+API https://openweathermap.org/current
+Show city on map (https://www.openstreetmap.org/)
+Weather Icon Pack - https://www.flaticon.com/packs/weather-160
+grayD: #999999; grayL: #D0DAD9; yellow: #FFA724
+ */
+
 //site settings
 const apiId = '2a4a207e504ae6c48ab505a543702a9d';
 

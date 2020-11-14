@@ -218,11 +218,11 @@ function setWeatherData (dataWeather) {
     //convert & out Additional info
     Humidity.innerHTML = `${dataWeather.main.humidity}%`;
 
-    if(SettingsSiteLang == 'en') {
+    if(localStorage.getItem('temperature') == 'F') {
         SpeedWind.innerHTML = `${dataWeather.wind.speed} mil/h`;
         Visibility.innerHTML = `${dataWeather.visibility} m`;
         Pressure.innerHTML = `${dataWeather.main.pressure} hPa`;
-    } else if(SettingsSiteLang == 'ua') {
+    } else if(localStorage.getItem('temperature') == 'C') {
         SpeedWind.innerHTML = `${Math.ceil(dataWeather.wind.speed * 3.6)} км/г`;
         Visibility.innerHTML = `${Math.round(dataWeather.visibility / 1000)} км`;
         Pressure.innerHTML = `${Math.round(dataWeather.main.pressure * 0.75006375541921)} мм.рт.ст.`;

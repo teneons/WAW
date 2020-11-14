@@ -77,7 +77,7 @@ let JustMap = document.querySelector('.JustMap');
 
 //main lang. audit
 TaglineText.innerText = LangNOW[0];
-InputCity.innerText.placeholder = LangNOW[1];
+InputCity.placeholder = LangNOW[1];
 SearchBtn.innerText = LangNOW[4];
 document.querySelector('.HumidityTxt').innerText = LangNOW [5];
 document.querySelector('.SpeedWindTxt').innerText = LangNOW[6];

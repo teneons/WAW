@@ -213,6 +213,9 @@ function setWeatherData (dataWeather) {
     let dayConducted = timeNow - strSunrise;
 
     let dayPassInPercent = Math.round((dayConducted / fullDay) * 100);
+    if(dayPassInPercent > 100) {
+        dayPassInPercent = 100;
+    }
     ProgressDay.style.width = `${dayPassInPercent}%`;
 
     //convert & out Additional info
@@ -270,10 +273,10 @@ let ThemeLight = document.querySelector('.ThemeLight');
 let ThemeDark = document.querySelector('.ThemeDark');
 
 //btn show settings
-SettingsBtn.addEventListener('click', () => {
-    SettingsWindow.style.animationName = 'showSettingsWindow';
+SettingsBtn.onclick = () => {
     SettingsWindow.style.visibility = 'visible';
-})
+    SettingsWindow.style.animationName = 'showSettingsWindow';
+}
 
 //save data and close btn
 BtnSaveSettings.addEventListener('click', () => {
